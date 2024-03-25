@@ -14,7 +14,7 @@
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // Exports & Imports
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-/IF defined(backup_apis)
+/IF defined(backup_recovery_apis)
   /EOF
 /ELSE
   /DEFINE qezchbks
@@ -121,7 +121,7 @@ dcl-c USE_SAME *blank;
 /// @info The Change Backup Schedule (QEZCHBKS) API allows the user to change the Operational Assistant backup schedules.
 /// @link https://www.ibm.com/docs/en/i/7.1?topic=ssw_ibm_i_71/apis/QEZCHBKS.html
 /// @param The variable that contains the backup schedule changes.
-/// @param Length of the change request structure.
+/// @param The length of the change request structure.
 /// @param The format of the input structure data, see FORMAT_CBKS0100.
 /// @param The structure in which to return error information.
 dcl-pr QEZCHBKS extpgm('QEZCHBKS');

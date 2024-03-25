@@ -1,11 +1,9 @@
 **free
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-/// @title QEZRTBKS
-/// @info All general backup related API resources
-///
-/// @project QAPIFREE
-/// @author kokuen
-/// @version 7.1
+// All backup related API resources
+//
+// QAPIFREE, by kokuen
+// version 7.1
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -18,12 +16,12 @@
 
 
 
-/IF not defined(api_common)
-  /INCLUDE BASE,COMMON
+/IF not defined(shared_resources)
+  /INCLUDE SHARED,RESOURCES
 /ENDIF
 
 /IF not defined(qusec)
-  /INCLUDE BASE,QUSEC
+  /INCLUDE SHARED,QUSEC
 /ENDIF
 
 // -----------------
@@ -42,6 +40,8 @@
   /EOF
 /ELSEIF defined(qezrtbks)
   /EOF
+/ELSEIF defined(qtacjma)
+  /EOF
 /ELSE
   /DEFINE backup_apis
 /ENDIF
@@ -57,115 +57,83 @@
 
 
 // ---------------------------------------------------------
-//  Formats names
+// Formats names
 // ---------------------------------------------------------
-/// @const QEZCHBKS only format.
+// QEZCHBKS API formats
 dcl-c CBKS_0100 const('CBKS0100');
 
-/// @const Library basic information format.
+// QEZOLBKL API formats
 dcl-c OBKL_0100 const('OBKL0100');
-/// @const Folder basic information format.
 dcl-c OBKL_0200 const('OBKL0200');
-/// @const Complete information format.
 dcl-c OBKL_0600 const('OBKL0600');
 
-/// @const QEZRTBKD only format.
+// QEZRTBKD API formats
 dcl-c RBKD_0100 const('RBKD0100');
 
-/// @const Basic backup status and history.
+// QEZRTBKH API formats
 dcl-c RBKH_0100 const('RBKH0100');
-/// @const Detailed backup status and information.
 dcl-c RBKH_0200 const('RBKH0200');
 
-/// @const Header of the information returned by the API.
+// QEZRTBKO API formats
 dcl-c RBKO_HEADER const('RBOH0100');
-/// @const Information about what the user has selected to be saved on the next backup for that type
-/// (*DAILY, *WEEKLY, or *MONTHLY).
 dcl-c RBKO_0100 const('RBKO0100');
-/// @const information on the last backup date and time, and when the next backup date and time for 
-/// that backup option are scheduled to occur.
 dcl-c RBKO_0200 const('RBKO0200');
 
-/// @const QEZRTBKS only format.
+// QEZRTBKS API formats
 dcl-c RBKS_0100 const('RBKS0100');
 
 
 // ---------------------------------------------------------
-//  APIs Shared constants
+// APIs Shared special values
 // ---------------------------------------------------------
-/// The folder information is returned.
+// Object type special values
 dcl-c OBJECT_FOLDER const('*FLR');
-/// The library information is returned.
 dcl-c OBJECT_LIBRARY const('*LIB');
 
-/// @const Return information for objects that are backed up *DAILY.
+// Backup frequency special values
 dcl-c BACKUP_DAILY const('*DAILY');
-/// @const Return information for objects that are backed up *WEEKLY.
 dcl-c BACKUP_WEEKLY const('*WEEKLY');
-/// @const Return information for objects that are backed up *MONTHLY.
 dcl-c BACKUP_MONTHLY const('*MONTHLY');
-/// @const Return information for objects that are backed up *DAILY, *WEEKLY or *MONTHLY.
 dcl-c BACKUP_ALL const('*ALL');
 
+// Week of month backup special values
+dcl-c WEEKMONTH_SAME const(-1);
+dcl-c WEEKMONTH_NONE const(*zeros);
+dcl-c WEEKMONTH_LAST const(5);
 
 // ---------------------------------------------------------
-//  QEZCHBKL constants
+// QEZCHBKL special values
 // ---------------------------------------------------------
-/// @const Back up daily.
+// Backup schedule special values
 dcl-c BACKUP_DAILY_SCHEDULE const(1);
-/// @const Back up weekly.
 dcl-c BACKUP_WEEKLY_SCHEDULE const(2);
-/// @const Back up monthly.
 dcl-c BACKUP_MONTHLY_SCHEDULE const(3);
-/// @const No backup
 dcl-c BACKUP_NONE_SCHEDULE const(4);
 
 
 // ---------------------------------------------------------
-//  QEZCHBKS constants
+// QEZCHBKS special values
 // ---------------------------------------------------------
-/// @const Daily backup.
+// Frequency special values
 dcl-c FREQUENCE_DAILY const('1');
-/// @const Weekly backup.
 dcl-c FREQUENCE_WEEKLY const('2');
-/// @const Monthly backup.
 dcl-c FREQUENCE_MONTHLY const('3');
-/// @const Every week except for the week that the monthly backup is to occur.
 dcl-c FREQUENCE_WEEKMONTH const('4');
-/// @const No change is made.
 dcl-c FREQUENCE_SAME const('9');
-/// @const No backup is scheduled.
 dcl-c FREQUENCE_NONE const(*blank);
 
-/// @const No backup operations are scheduled.
+// Backup time special values
 dcl-c TIME_NONE const(*blanks);
-/// @const No change should be made to the current backup operations.
 dcl-c TIME_SAME const('*SAME');
 
-/// @const No message is sent.
+// Message hour special values
 dcl-c HOURS_NONE const(0);
-/// @const No change is made.
 dcl-c HOURS_SAME const(-1);
 
-/// @const No changes are made.
-dcl-c WEEKMONTH_SAME const(-1);
-/// @const No monthly backups are scheduled.
-dcl-c WEEKMONTH_NONE const(*zeros);
-/// @const The last week for any given month.
-dcl-c WEEKMONTH_LAST const(5);
-
-/// @const Don't use the given schedule.
+// Schedule usage special values
 dcl-c USE_NO const('0');
-/// @const Use the given schedule.
 dcl-c USE_YES const('1');
-/// @const Use the current schedule.
 dcl-c USE_SAME const(*blank);
-
-
-// ---------------------------------------------------------
-//   constants
-// ---------------------------------------------------------
-
 
 
 
@@ -180,15 +148,13 @@ dcl-c USE_SAME const(*blank);
 // ---------------------------------------------------------
 // QEZCHBKL data structures 
 // ---------------------------------------------------------
-
-
-/// @info Base structure used by the QEZCHBKL API.
+// Base structure used by the QEZCHBKL API
 dcl-ds InputStructure qualified inz;
   recordsNumber int(10) inz(2);
   Records likeds(Record) dim(2);
 end-ds;
 
-/// @info Record structure of the input structure used by the QEZCHBKL API.
+// Record structure of the input structure used by the QEZCHBKL API
 dcl-ds Record qualified template;
   recordLength int(10);
   Structures likeds(Structures);
@@ -196,64 +162,43 @@ dcl-ds Record qualified template;
   data char(INT10_MAX) options(*varsize);
 end-ds;
 
-/// @info Structures linked to a record of the input structure used by the QEZCHBKL API.
-/// @field "backupType"
-///   @useonly "BACKUP_DAILY_SCHEDULE", "BACKUP_WEEKLY_SCHEDULE", "BACKUP_MONTHLY_SCHEDULE",
-///   "BACKUP_NONE_SCHEDULE"
-/// @field "Names" Library names are of type char(10) while folder names are of type char(12)
+//Structures linked to a record of the input structure used by the QEZCHBKL API
 dcl-ds Structures qualified template;
   arraySize int(10);
-  backupType char(1);
-  Names char(INT10_MAX) options(*varsize);
+  backupType char(1); // Use the "BACKUP_*_SCHEDULE" constants
+  Names char(INT10_MAX) options(*varsize); // Library names are of type char(10) while folder names are of type char(12)
 end-ds;
 
 
 // ---------------------------------------------------------
 // QEZCHBKS data structures 
 // ---------------------------------------------------------
-
-
-/// @info Format CBKS0100 contains the information regarding changes to the Operational Assistant
-/// backup schedule.
-/// @field "hoursBeforeReminder" Hours before backup to send load-tape message.
-///   @use "HOURS_NONE", "HOURS_SAME"
-/// @field "backupWeekMonth" Occurrence of week in month to run backup.
-///   @use "WEEKMONTH_SAME", "WEEKMONTH_NONE", "WEEKMONTH_LAST"
-/// @field "useSchedule" Run backup using this schedule.
-///   @useonly "USE_NO", "USE_YES", "USE_SAME"
-/// @fields "backupOn[day]"
-///   @useonly "FREQUENCE_DAILY", "FREQUENCE_WEEKLY", "FREQUENCE_MONTHLY", "FREQUENCE_WEEKMONTH",
-///   "FREQUENCE_SAME", "FREQUENCE_NONE"
-/// @fields "[day]BackupTime"
-///   @use "TIME_NONE", "TIME_SAME"
+// Format CBKS0100 contains the information regarding changes to the Operational Assistant backup schedule
 dcl-ds CBKS0100 qualified inz;
-  hoursBeforeReminder int(10);
-  backupWeekMonth int(10);
-  useSchedule char(1);
-  backupOnSunday char(1);
-  sundayBackupTime char(6);
-  backupOnMonday char(1);
-  mondayBackupTime char(6);
-  backupOnTuesday char(1);
-  tuesdayBackupTime char(6);
-  backupOnWednesday char(1);
-  wednesdayBackupTime char(6);
-  backupOnThursday char(1);
-  thursdayBackupTime char(6);
-  backupOnFriday char(1);
-  fridayBackupTime char(6);
-  backupOnSaturday char(1);
-  saturdayBackupTime char(6);
+  hoursBeforeReminder int(10); // Use the "HOURS_*" constants
+  backupWeekMonth int(10); // Use the "WEEKMONTH_*" constants
+  useSchedule char(1); // Use the "USE_*" constants
+  backupOnSunday char(1); // Use the "FREQUENCE_*" constants
+  sundayBackupTime char(6); // Use the "TIME_*" constants
+  backupOnMonday char(1); // Use the "FREQUENCE_*" constants
+  mondayBackupTime char(6); // Use the "TIME_*" constants
+  backupOnTuesday char(1); // Use the "FREQUENCE_*" constants
+  tuesdayBackupTime char(6); // Use the "TIME_*" constants
+  backupOnWednesday char(1); // Use the "FREQUENCE_*" constants
+  wednesdayBackupTime char(6); // Use the "TIME_*" constants
+  backupOnThursday char(1); // Use the "FREQUENCE_*" constants
+  thursdayBackupTime char(6); // Use the "TIME_*" constants
+  backupOnFriday char(1); // Use the "FREQUENCE_*" constants
+  fridayBackupTime char(6); // Use the "TIME_*" constants
+  backupOnSaturday char(1); // Use the "FREQUENCE_*" constants
+  saturdayBackupTime char(6); // Use the "TIME_*" constants
 end-ds;
 
 
 // ---------------------------------------------------------
 // QEZOLBKL data structures 
 // ---------------------------------------------------------
-
-
-/// @info Informations about the list of objects that are to be backed up.
-/// @fields "*n" Reserved by the system
+//Informations about the list of objects that are to be backed up
 dcl-ds ListInformation qualified inz;
   totalRecords int(10);
   recordsReturned int(10);
@@ -262,32 +207,27 @@ dcl-ds ListInformation qualified inz;
   informationState char(1);
   creationDateTime char(13);
   listStatus char(1);
-  *n char(1);
+  *n char(1); // Reserved by the system
   outputLength int(10);
   firstBufferRecord int(10);
   userAuthority int(10);
-  *n char(36);
+  *n char(36); // Reserved by the system
 end-ds;
 
-/// @info The OBKL0100 format includes the basic information for a library object entry.
-/// @field "backupOption"
-///   @use "BACKUP_DAILY", "BACKUP_WEEKLY", "BACKUP_MONTHLY"
-/// @field "*n" Reserved by the system
+// The OBKL0100 format includes the basic information for a library object entry
 dcl-ds OBKL0100 qualified inz;
-  backupOption char(10);
+  backupOption char(10); // Use the "BACKUP_" constants
   libraryName char(10);
-  *n char(2);
+  *n char(2); // Reserved by the system
 end-ds;
 
-/// @info The OBKL0200 format includes the basic information for a folder object entry.
-/// @field "backupOption"
-///   @useonly "BACKUP_DAILY", "BACKUP_WEEKLY", "BACKUP_MONTHLY"
+// The OBKL0200 format includes the basic information for a folder object entry
 dcl-ds OBKL0200 qualified inz;
-  backupOption char(10);
+  backupOption char(10); // Use the "BACKUP_" constants
   folderName char(12);
 end-ds;
 
-/// @info The OBKL0600 format includes the complete information for a library object entry.
+// The OBKL0600 format that includes the complete information for a library object entry
 dcl-ds OBKL0600_library qualified inz;
   Info likeds(OBKL0100);
   lastBackupDate char(7);
@@ -297,29 +237,25 @@ dcl-ds OBKL0600_library qualified inz;
   *n char(21); // Reserved by the system
 end-ds;
 
-/// @info The OBKL0600 format includes the complete information for a folder object entry.
-/// @field "*n" Reserved by the system
+// The OBKL0600 format that includes the complete information for a folder object entry
 dcl-ds OBKL0600_folder qualified inz;
   Info likeds(OBKL0200);
   lastBackupDate char(7);
   lastBackupTIme char(6);
   objectDescription char(50);
   changedSinceLastBackup ind;
-  *n char(21);
+  *n char(21); // Reserved by the system
 end-ds;
 
 
 // ---------------------------------------------------------
 // QEZRTBKD data structures 
 // ---------------------------------------------------------
-
-
-/// @info Structure of the output of the QEZRTBKD API.
-/// @field "lastSavedDate" The format of this field is CYYMMDD.
+// Structure of the output of the QEZRTBKD API.
 dcl-ds RBKD0100 qualified inz;
   bytesAvailable int(10);
   bytesReturned int(10);
-  lastSavedDate char(7);
+  lastSavedDate char(7); // CYYMMDD date format
   lastSavedTime char(6);
   objectDescription char(50);
   changedSinceLastBackup ind;
@@ -329,66 +265,61 @@ end-ds;
 // ---------------------------------------------------------
 // QEZRTBKH data structures 
 // ---------------------------------------------------------
-
-
-/// @info Structure of the output of the QEZRTBKH API when using the RBKH0100 format.
-/// @fields "[*]Date" The format of this field is CYYMMDD.
-/// @field "*n" Reserved by the system.
+// Structure of the output of the QEZRTBKH API when using the RBKH0100 format.
 dcl-ds RBKH0100 qualified inz;
   bytesReturned int(10);
   bytesAvailable int(10);
-  allUserLibrariesLastBackupDate char(7);
+  allUserLibrariesLastBackupDate char(7); // CYYMMDD date format
   allUserLibrariesLastBackupTime char(6);
   allUserLibrariesTape char(4);
-  allUserLibrariesChangesLastBackupDate char(7);
+  allUserLibrariesChangesLastBackupDate char(7); // CYYMMDD date format
   allUserLibrariesChangesLastBackupTime char(6);
   allUserLibrariesChangesTape char(4);
-  librariesOnListLastBackupDate char(7);
+  librariesOnListLastBackupDate char(7); // CYYMMDD date format
   librariesOnListLastBackupTime char(6);
   librariesOnListTape char(4);
-  librariesOnListChangesLastBackupDate char(7);
+  librariesOnListChangesLastBackupDate char(7); // CYYMMDD date format
   librariesOnListChangesLastBackupTime char(6);
   librariesOnListChangesTape char(4);
-  allFoldersLastBackupDate char(7);
+  allFoldersLastBackupDate char(7); // CYYMMDD date format
   allFoldersLastBackupTime char(6);
   allFoldersTape char(4);
-  allFoldersChangesLastBackupDate char(7);
+  allFoldersChangesLastBackupDate char(7); // CYYMMDD date format
   allFoldersChangesLastBackupTime char(6);
   allFoldersChangesTape char(4);
-  foldersOnListLastBackupDate char(7);
+  foldersOnListLastBackupDate char(7); // CYYMMDD date format
   foldersOnListLastBackupTime char(6);
   foldersOnListTape char(4);
-  securityDataLastBackupDate char(7);
+  securityDataLastBackupDate char(7); // CYYMMDD date format
   securityDataLastBackupTime char(6);
   securityDataTape char(4);
-  configurationDataLastBackupDate char(7);
+  configurationDataLastBackupDate char(7); // CYYMMDD date format
   configurationDataLastBackupTime char(6);
   configurationDataTape char(4);
-  calendarsLastBackupDate char(7);
+  calendarsLastBackupDate char(7); // CYYMMDD date format
   calendarsLastBackupTime char(6);
   calendarsTape char(4);
-  mailBackupDate char(7);
+  mailBackupDate char(7); // CYYMMDD date format
   mailLastBackupTime char(6);
   mailTape char(4);
-  allUserDirectoriesLastBackupDate char(7);
+  allUserDirectoriesLastBackupDate char(7); // CYYMMDD date format
   allUserDirectoriesLastBackupTime char(6);
   allUserDirectoriesTape char(4);
-  allUserDirectoriesChangesLastBackupDate char(7);
+  allUserDirectoriesChangesLastBackupDate char(7); // CYYMMDD date format
   allUserDirectoriesChangesLastBackupTime char(6);
   allUserDirectoriesChangesTape char(4);
-  *n char(21);
+  *n char(21); // Reserved by the system
 end-ds;
 
-/// @info Structure of the output of the QEZRTBKH API when using the RBKH0200 format.
+// Structure of the output of the QEZRTBKH API when using the RBKH0200 format.
 dcl-ds RBKH0200 qualified inz;
   BasicInfos likeds(RBKH_0100);
   BackupInfos likeds(BackupInfo) dim(UNS3_MAX);
 end-ds;
 
-/// @info General information about the backup history.
-/// @field "backupDate" The format of this field is CYYMMDD.
+// General information about the backup history.
 dcl-ds BackupInfo qualified template;
-  backupDate char(7);
+  backupDate char(7); // CYYMMDD date format
   backupTime(6);
   backupOptions char(10);
   tapeSet char(4);
@@ -406,9 +337,7 @@ end-ds;
 // ---------------------------------------------------------
 // QEZRTBKO data structures 
 // ---------------------------------------------------------
-
-
-/// @info Structure of the header of the output of the QEZRTBKO API.
+// Structure of the header of the output of the QEZRTBKO API.
 dcl-ds RBOH0100 qualified template;
   bytesReturned int(10);
   bytesAvailable int(10);
@@ -418,10 +347,7 @@ dcl-ds RBOH0100 qualified template;
 end-ds;
 
 
-/// @info Structure of the output of the QEZRTBKO API when using the RBKO0100 format.
-/// @field "backupDevices&tapeSetsToRotate" char(10) array and char(4) array with sizes depending on
-/// "backupDevicesNumber" and "offsetToTapesToRotate" fields value.
-/// @field "*n" Reserved by the system.
+// Structure of the output of the QEZRTBKO API when using the RBKO0100 format.
 dcl-ds RBKO0100 qualified inz;
   offsetToBackupDevices int(10);
   backupDevicesNumber int(10);
@@ -442,18 +368,17 @@ dcl-ds RBKO0100 qualified inz;
   printDetailedReport ind;
   userExitProgramName char(10);
   userExitProgramLibrary char(10);
-  *n char(1);
+  *n char(1); // Reserved by the system
   offsetToAdditionalInfo int(10);
   backupDevices&tapeSetsToRotate char(INT5_MAX) options(*varsize);
 end-ds;
 
-/// @info Structure of the output of the QEZRTBKO API when using the RBKO0200 format.
-/// @fields "[*]Date" The format of this field is CYYMMDD.
+// Structure of the output of the QEZRTBKO API when using the RBKO0200 format.
 dcl-ds RBKO0200 qualified inz;
   SaveInformation likeds(RBKO_0100);
-  lastBackupDate char(7);
+  lastBackupDate char(7); // CYYMMDD date format
   lastBackupTime char(6);
-  nextBackupDate char(7);
+  nextBackupDate char(7); // CYYMMDD date format
   nextBackupTime char(6);
 end-ds;
 
@@ -461,16 +386,13 @@ end-ds;
 // ---------------------------------------------------------
 // QEZRTBKS data structures 
 // ---------------------------------------------------------
-
-
-/// @info
-/// @field "hoursBeforeReminder"
+// Structure of the output of the QEZRTBKS API when using the RBKS0100 format.
 dcl-ds RBKS0100 qualified;
   bytesReturned int(10);
   bytesAvailable int(10);
-  hoursBeforeReminder int(10);
+  hoursBeforeReminder int(10); // Use the "HOURS_*" constants
   backupWeekMonth int(10);
-  useSchedule char(1);
+  useSchedule char(1); // Use the "USE_*" constants 
   backupOnSunday char(1);
   sundayBackupTime char(6);
   backupOnMonday char(1);
@@ -497,11 +419,11 @@ end-ds;
 
 
 
-/// @info The Change Object Backup List (QEZCHBKL) API changes the backup type for a list of objects 
-/// that are specified by the user.
+/// @info The Change Object Backup List (QEZCHBKL) API changes the backup type for a list of objects that are specified
+/// by the user.
 /// @link https://www.ibm.com/docs/en/i/7.1?topic=ssw_ibm_i_71/apis/QEZCHBKL.html
-/// @param This structure includes the keys and data that are needed to make the necessary changes
-/// to the backup definitions.
+/// @param This structure includes the keys and data that are needed to make the necessary changes to the backup
+/// definitions.
 ///   @useonly "InputStructure"
 /// @param The length of the input structure.
 /// @param The structure in which to return error information.
@@ -512,8 +434,8 @@ dcl-pr QEZCHBKL extpgm('QEZCHBKL');
 end-pr;
 
 
-/// @info The Change Backup Schedule (QEZCHBKS) API allows the user to change the Operational
-/// Assistant backup schedules.
+/// @info The Change Backup Schedule (QEZCHBKS) API allows the user to change the Operational Assistant backup
+/// schedules.
 /// @link https://www.ibm.com/docs/en/i/7.1?topic=ssw_ibm_i_71/apis/QEZCHBKS.html
 /// @param The variable that contains the backup schedule changes.
 ///   @useonly "CBKS0100"
@@ -532,18 +454,18 @@ end-pr;
 /// @info The Open List of Objects to be Backed Up (QEZOLBKL) API retrieves an open list of the objects that are to be
 /// backed up.
 /// @link https://www.ibm.com/docs/en/i/7.1?topic=ssw_ibm_i_71/apis/qezolbkl.html
-/// @parameter The receiver variable that receives the information requested.
-/// @parameter The length of the receiver variable provided.
-/// @parameter Information about the list that is created by this program.
+/// @param The receiver variable that receives the information requested.
+/// @param The length of the receiver variable provided.
+/// @param Information about the list that is created by this program.
 ///   @useonly "ListInformation"
-/// @parameter The number of records in the list to put into the receiver variable.
-/// @parameter The name of the format to be used to return the requested information.
+/// @param The number of records in the list to put into the receiver variable.
+/// @param The name of the format to be used to return the requested information.
 ///   @useonly "OBKL_0100", "OBKL_0200", "OBKL_0600"
-/// @parameter The type of the objects to be returned in the list.
+/// @param The type of the objects to be returned in the list.
 ///   @useonly "OBJECT_FOLDER", "OBJECT_LIBRARY"
-/// @parameter The backup type of the objects that you request.
+/// @param The backup type of the objects that you request.
 ///   @useonly "BACKUP_DAILY", "BACKUP_WEEKLY", "BACKUP_MONTHLY", "BACKUP_ALL"
-/// @parameter The structure in which to return error information.
+/// @param The structure in which to return error information.
 dcl-pr QEZOLBKL extpgm('QEZOLBKL');
   output char(INT10_MAX) options(*varsize);
   expectedOutputLength int(10) const;
@@ -556,8 +478,8 @@ dcl-pr QEZOLBKL extpgm('QEZOLBKL');
 end-pr;
 
 
-/// @info The Retrieve Backup Detail (QEZRTBKD) API retrieves more detailed information about the
-/// library or folder that is to be backed up.
+/// @info The Retrieve Backup Detail (QEZRTBKD) API retrieves more detailed information about the library or folder that
+/// is to be backed up.
 /// @link https://www.ibm.com/docs/en/i/7.1?topic=ssw_ibm_i_71/apis/qezrtbkd.html
 /// @param The receiver variable that receives the information requested.
 ///   @useonly "RBKD0100"
@@ -568,7 +490,7 @@ end-pr;
 ///   @useonly "RBKD_0100"
 /// @param The type of object for which you are requesting information.
 ///   @useonly "OBJECT_FOLDER", "OBJECT_LIBRARY"
-/// @parameter The structure in which to return error information.
+/// @param The structure in which to return error information.
 dcl-pr QEZRTBKD extpgm('QEZRTBKD');
   output char(INT10_MAX) options(*varsize);
   outputLength int(10) const;
@@ -580,8 +502,8 @@ dcl-pr QEZRTBKD extpgm('QEZRTBKD');
 end-pr;
 
 
-/// @info The Retrieve Backup History (QEZRTBKH) API retrieves information about the backup status
-/// and history into a single variable in the calling program.
+/// @info The Retrieve Backup History (QEZRTBKH) API retrieves information about the backup status and history into a
+/// single variable in the calling program.
 /// @link https://www.ibm.com/docs/en/i/7.1?topic=ssw_ibm_i_71/apis/qezrtbkh.html
 /// @param The receiver variable that receives the information requested.
 ///   @useonly "RBKH0100", "RBKH0200"
