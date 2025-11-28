@@ -18,7 +18,7 @@
 
 
 // ILE/RPG INCLUDE FOR SAA COMMUNICATIONS SUPPORT
-dcl-ds CommunicationConstants qualified end-ds;
+dcl-ds CommunicationConstants end-ds;
 
 
 //--------------------------------------
