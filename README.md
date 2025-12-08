@@ -14,7 +14,7 @@ Tipycally, fields of type char(1) that are already used as indicators have been 
 All data structures are now qualified to allow same field names within multiple data structures.
 
 ## Enumerations
-Constants representing special values have been regrouped into enumerations for better readability of the code
+Constants representing special values have been regrouped into enumerations for better readability of the code.
 
 ## Compiler indications
-Compiler instructions have been added to avoid "include loops" while including one or more of the source members in your code.  
+Compiler instructions have been added to avoid inclusion redudancy.
