@@ -1,9 +1,16 @@
 **free
 //----------------------------------------------------------
-// Title: DSQCOMMR 
-// Role: IBM Query Management/400 interface.
-//
 // All original rights and credits goes to IBM.
+//
+// Header File Name: DSQCOMMR
+// Descriptive Name: CPI-C Header.
+//
+// Description: This is the CLE header for the CPI-C API.
+// 
+// Header Files Included: none. 
+// Macros List: none.
+// Structure List:
+// Function Prototype List:
 //----------------------------------------------------------
 
 
@@ -14,6 +21,8 @@
 /endif
 
 
+//--------------------------------------
+// Data structures
 //--------------------------------------
 
 
@@ -36,6 +45,8 @@ dcl-ds QueryInterface qualified;
 end-ds;
 
 
+//--------------------------------------
+// Special values
 //--------------------------------------
 
 

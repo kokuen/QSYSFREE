@@ -1,9 +1,14 @@
 **free
 //----------------------------------------------------------
-// Title: CMRPG 
-// Role: CLE header for the CPI-C API.
+// All original rights and credits goes to IBM.
 //
-// All original rights and credits goes to IBM
+// NAME:  DSQCOMMR
+// MODULE-TYPE: IBM Query Management/400 interface include file.
+// 
+// DESCRIPTION: This include file contains the declarations needed by an RPG/400 application
+//  program for interfacing with the Query Manager/400 Callable Interface.
+//  Query Management is the AS/400 implementation of the Systems Application Architecture Query
+//  Callable Programming Interface.
 //----------------------------------------------------------
 
 
@@ -15,12 +20,16 @@
 
 
 //--------------------------------------
+// Data structures
+//--------------------------------------
 
 
 // ILE/RPG INCLUDE FOR SAA COMMUNICATIONS SUPPORT
 dcl-ds CommunicationConstants end-ds;
 
 
+//--------------------------------------
+// Special values
 //--------------------------------------
 
 
