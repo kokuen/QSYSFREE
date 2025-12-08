@@ -33,10 +33,10 @@ dcl-ds QueryInterface qualified;
   completionMessageId char(8);
   queryMessageId char(8);
   failAtStartParameterError char(8);
-  commandIsCanceled ind;
+  commandIsCanceled char(1);
   *n char(17) inz(x'00'); // Reserved by the system
-  queryDerivedFromQRYDFN ind;
-  formDerivedFromQRYDFN ind;
+  queryDerivedFromQRYDFN char(1);
+  formDerivedFromQRYDFN char(1);
   environmentDeletion char(4);
   *n char(256) inz(x'00'); // Reserved by the system
   *n char(256) inz(x'00'); // Reserved by the system
@@ -57,9 +57,7 @@ dcl-enum query_execution_status qualified;
   SEVERE 16;
 end-enum;
 
-
 //--------------------------------------
-
 
 dcl-c INTERFACE_PROGRAM 'QQXMAIN';
 dcl-c CHAR 'CHAR';

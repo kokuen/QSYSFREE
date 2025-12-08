@@ -33,7 +33,7 @@ dcl-ds RTVC0100 qualified;
   commandName char(10);
   libraryName char(10);
   *n char(2) inz(x'00'); // Reserved by the system
-  Called After Command ind;
+  calledAfterCommand char(1);
   *n char(1) inz(x'00'); // Reserved by the system
   offsetToOriginalCommandString int(10);
   originalCommandStringLength int(10);

@@ -32,8 +32,8 @@ dcl-ds CHGC0100 qualified;
   exitPointFormat char(8);
   commandName char(10);
   libraryName char(10);
-  changeAllowed ind;
-  promptRequested ind;
+  changeAllowed char(1);
+  promptRequested char(1);
   *n char(2) inz(x'00'); // Reserved by the system
   offsetToCommandString int(10);
   commandStringLength int(10);
