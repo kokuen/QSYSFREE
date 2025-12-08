@@ -30,14 +30,14 @@
 dcl-ds CHGC0100 qualified;
   exitPointName char(20);
   exitPointFormat char(8);
-  CommandName char(10);
-  LibraryName char(10);
+  commandName char(10);
+  libraryName char(10);
   changeAllowed ind;
   promptRequested ind;
   *n char(2) inz(x'00'); // Reserved by the system
   offsetToCommandString int(10);
   commandStringLength int(10);
-  OffsetToProxyChain int(10);
+  offsetToProxyChain int(10);
   proxyChainEntries int(10);
   // commandString char(*)
   // proxyCommandChain char(*)

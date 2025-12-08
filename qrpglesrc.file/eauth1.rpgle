@@ -53,8 +53,8 @@ dcl-ds QsyAuthenticationInfo qualified;
   userProfile char(10);
   *n char(2) inz(x'00'); // Reserved by the system
   offseToAdditionalFactor int(10);
-  AdditionalFactorLength int(10);
-  AdditionalFactorCCSID int(10);
+  additionalFactorLength int(10);
+  additionalFactorCCSID int(10);
   // char(149) Authentication Caller
   remotePort int(10);
   localPort int(10);
