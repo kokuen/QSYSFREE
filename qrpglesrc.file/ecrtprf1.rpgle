@@ -5,7 +5,7 @@
 // Header File Name: ECRTPRF1
 // Descriptive Name: Create User Profile Exit Program
 // 
-// Description: TThe Create User Profile exit program provides the notification of profiles being 
+// Description: The Create User Profile exit program provides the notification of profiles being 
 //  created.
 // 
 // Header Files Included: None.
