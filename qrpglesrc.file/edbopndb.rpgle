@@ -52,6 +52,8 @@ dcl-ds DBOP0100 qualified;
    jobNumber char(6);
    currentUserProfile char(10);
    queryOpen char(1);
+end-ds;
+
   // EDBFILI00 char(45);
   // EDBDBEFN04 char(10) overlay(EDBFILI00: 1);
   // EDBDBELN02 char(10) overlay(EDBFILI00: 11);
@@ -65,4 +67,3 @@ dcl-ds DBOP0100 qualified;
   // EDBBEODO02 char(1) overlay(EDBFILI00: 44);
   // EDBERVED02 char(1) overlay(EDBFILI00: 45);
   // varyingLength char(*);
-end-ds;
