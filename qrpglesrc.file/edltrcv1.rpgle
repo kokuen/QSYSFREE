@@ -15,7 +15,7 @@
 //----------------------------------------------------------
 
 
-/if defined(edltprf2)
+/if defined(edltrcv1)
   /eof
 /else
   /define edltrcv1
