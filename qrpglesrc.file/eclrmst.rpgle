@@ -27,12 +27,14 @@
 //--------------------------------------
 
 
+// Type Definition for the Clear Master Key Exit Program information
 dcl-ds MasterKeyInfo qualified;
   exitInfoLength int(10);
   masterKeyID int(10);
   version char(1);
 end-ds;
 
+// Type Definition for the Clear Master Key Exit Program returned Status Information
 dcl-ds MasterKeyStatus qualified;
   statusInfoLength int(10);
   clearStatus char(1);

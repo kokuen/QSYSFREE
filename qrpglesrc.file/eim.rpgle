@@ -30,14 +30,14 @@ dcl-ds EIMHandle qualified;
   handle char(16);
 end-ds;
 
-//----------------------------
-
 dcl-ds EIMBinaryData qualified;
   length int(10);
   data pointer;
 end-ds;
 
-//----------------------------
+//-----------------
+// Eim Connect Information
+//-----------------
 
 dcl-ds EIMSimpleConnectInfo qualified;
   protect int(10);
@@ -51,6 +51,8 @@ dcl-ds EIMSSLInfo qualified;
   certificateLabel pointer;
 end-ds;  
 
+// NOTE: for compatability, do not add any information to the union in this structure that will 
+//  increase the size of the union.
 dcl-ds EIMConnectInfo qualified;
   type int(10);
   credentials char(64);
@@ -61,8 +63,8 @@ dcl-ds EIMConnectInfo qualified;
   SSL pointer;
 end-ds;
 
-//----------------------------
-
+// NOTE: for compatability, do not add any information to the union in this structure that will 
+//  increase the size of the union.
 dcl-ds EIMIdentifierInfo qualified;
   ID char(16);
   uniqueName pointer; 
@@ -71,7 +73,9 @@ dcl-ds EIMIdentifierInfo qualified;
   IDtype int(10);
 end-ds;
 
-//----------------------------
+//-----------------
+// Eim Policy Information
+//-----------------
 
 dcl-ds EIMCertificatePolicyFilter qualified;
   sourceRegistry pointer;
@@ -128,7 +132,9 @@ dcl-ds EIMPolicyAssociationInfo qualified;
   defaultDomainTargetRegistryUserName pointer;
 end-ds;
 
-//----------------------------
+//-----------------
+// Eim User Identity Information
+//-----------------
 
 dcl-ds EIMCertificateInfo qualified;
   issuerDN pointer;
@@ -153,7 +159,9 @@ dcl-ds EIMUserIdentityInfo qualified;
   certificateLength uns(10);
 end-ds;
 
-//----------------------------
+//-----------------
+// Eim Configuration Information
+//-----------------
 
 dcl-ds EIMConfigInfo_Format0 qualified;
   ldapURL pointer;
@@ -173,7 +181,9 @@ dcl-ds EIMConfigInfo qualified;
   dcl-s x509Registry pointer;
 end-ds;
 
-//----------------------------
+//-----------------
+// Eim Host information for version
+//-----------------
 
 dcl-ds EIMHostInfo qualified;
   hostType int(10);
@@ -182,24 +192,26 @@ dcl-ds EIMHostInfo qualified;
   LDAPURL pointer;
 end-ds;
 
-
-//--------------------------------------
-// Access data structures
-//--------------------------------------
-
+//-----------------
+// Return code structure
+//-----------------
 
 dcl-ds EIMReturnStructure qualified;
-  inputSize uns(10);
-  outputSize uns(10);
-  errorNumber int(10);
+  inputSize uns(10); // Size of the entire RC structure. This is filled in by the caller
+  outputSize uns(10); // Filled in by API to tell caller how much data could have been returned
+  errorNumber int(10); // Same as the errno returned as the rc for the API
   messageCatalogSetNumber int(10);
   messageCatalogMessageID int(10);
   LDAPError int(10);
   SLLError int(10);
   fieldForFutureUse char(16);
-  substitutionTextLength uns(10);
-  errorInfo char(1);
+  substitutionTextLength uns(10); // Excluding a null-terminator which may or may not be present
+  errorInfo char(1); // further info describing the error
 end-ds;
+
+//-----------------
+// Access structures
+//-----------------
 
 dcl-ds EIMAccessUser qualified;
   user char(16);
@@ -209,20 +221,23 @@ dcl-ds EIMAccessUser qualified;
   userType int(10);
 end-ds;
 
+// This is used to access the data elements.
 dcl-ds EIMListData qualified;
   dataLength uns(10);
-  offsetToData uns(10);
+  offsetToData uns(10); // Relative to the start of the parent structure
 end-ds;
 
+// This is used to access sub lists within the list information returned.
 dcl-ds EIMSubList qualified;
   entriesNumber uns(10);
-  offsetToSublist uns(10);
+  offsetToSublist uns(10); // Relative to the start of the parent structure
 end-ds;
 
+// Information returned from eimRetrieveConfiguration() API.
 dcl-ds EIMConfig qualified;
-  bytesReturned uns(10);
-  bytesAvailable uns(10);
-  isEnabled int(10);
+  bytesReturned uns(10); // Bytes actually returned by the API
+  bytesAvailable uns(10); // Bytes of available data that could have been returned by the API
+  EIMDomainParticipationEnabled int(10);
   // LDAPURL char(8);
   LDAPURLLength uns(10);
   offsetToLDAPURL uns(10);
@@ -237,24 +252,30 @@ dcl-ds EIMConfig qualified;
   offsetTox509Registry uns(10);
 end-ds;
 
+// Information returned from eimGetAttribute() API.
 dcl-ds EIMAttribute qualified;
-  bytesReturned uns(10);
-  bytesAvailable uns(10);
+  bytesReturned uns(10); // Bytes actually returned by the API
+  bytesAvailable uns(10); // Bytes of available data that could have been returned by the API
   // handleAttribute char(8);
   dataLength uns(10);
   offsetToHandleAttribute uns(10);
 end-ds;
 
+// This is used by all EIM APIs that return a list.
+//  It gives information on the amount of information returned and then gives access to the first 
+//  list entry.
 dcl-ds EIMList qualified;
-  bytesReturned uns(10);
-  bytesAvailable uns(10);
-  entriesReturned uns(10);
-  entriesAvailable uns(10);
-  offsetToFirstEntry uns(10);
+  bytesReturned uns(10); // Bytes actually returned by the API
+  bytesAvailable uns(10); // Bytes of available data that could have been returned by the API
+  entriesReturned uns(10); // Entries actually returned by the API
+  entriesAvailable uns(10); // Entries available to be returned by the API
+  offsetToFirstEntry uns(10); // Relative to the start of the EIMList structure
 end-ds;
 
+// List information returned by the following APIs:
+//  eimListDomains
 dcl-ds EIMDomain qualified;
-  offsetToNextEntry uns(10);
+  offsetToNextEntry uns(10); // Relative to the start of this structure
   // domainName char(8);
   domainNameLength uns(10);
   offsetToDomainName uns(10);
@@ -267,8 +288,10 @@ dcl-ds EIMDomain qualified;
   policyAssociation int(10);
 end-ds;
 
+// List information returned by the following APIs:
+//  eimListRegistries
 dcl-ds EIMRegistry qualified;
-  offsetToNextEntry uns(10);
+  offsetToNextEntry uns(10); // Relative to the start of this structure
   registryKind int(10);
   // registryName char(8);
   registryNameLength uns(10);
@@ -301,8 +324,10 @@ dcl-ds EIMRegistry qualified;
   offsetToEIMRegistryNameSublist2 uns(10);
 end-ds;
 
+// List information returned by the following APIs:
+//  eimListIdentifiers, eimGetAssociatedIdentifiers
 dcl-ds EIMIdentifier qualified;
-  offsetToNextEntry uns(10);
+  offsetToNextEntry uns(10); // Relative to the start of this structure
   // uniqueName char(8);
   uniqueNameLength uns(10);
   offsetToUniqueName uns(10);
@@ -318,14 +343,16 @@ dcl-ds EIMIdentifier qualified;
   // EimAddlInfoSublist char(8);
   EIMAddlInfoSublistLength uns(10);
   offsetToEIMAddlInfoSublist uns(10);
-  AssociationType int(10);
+  AssociationType int(10); // Only valid for eimGetAssociatedIdentifiers
   // usedGroupRegistry char(8);
-  usedGroupRegistryLength uns(10);
-  offsetToUsedGroupRegistry uns(10);
+  usedGroupRegistryLength uns(10); // Only valid for eimGetAssociatedIdentifiers
+  offsetToUsedGroupRegistry uns(10); // Only valid for eimGetAssociatedIdentifiers
 end-ds;
 
+// List information returned by the following APIs:
+//  eimListAssociations
 dcl-ds EIMAssociation qualified;
-  offsetToNextEntry uns(10);
+  offsetToNextEntry uns(10); // Relative to the start of this structure
   AssociationType int(10);
   // registryType char(8);
   registryTypeLength uns(10);
@@ -338,8 +365,12 @@ dcl-ds EIMAssociation qualified;
   offsetToRegistryUserName uns(10);
 end-ds;
 
+// List information returned by the following APIs:
+//  eimGetRegistryAlias
+// Supplemental list information for the following structs:
+//  EimRegistry
 dcl-ds EIMRegistryAlias qualified;
-  offsetToNextEntry uns(10);
+  offsetToNextEntry uns(10); // Relative to the start of this structure
   // aliasType char(8);
   aliasTypeLength uns(10);
   offsetToAliasType uns(10);
@@ -348,8 +379,10 @@ dcl-ds EIMRegistryAlias qualified;
   offsetToAliasValue uns(10);
 end-ds;
 
+// List information returned by the following APIs:
+//  eimListRegistryUsers, eimListRegistryUsersCreds 
 dcl-ds EIMRegistryUser qualified dim;
-  offsetToNextEntry uns(10);
+  offsetToNextEntry uns(10); // Relative to the start of this structure
   // name char(8);
   nameLength uns(10);
   offsetToName uns(10);
@@ -364,8 +397,11 @@ dcl-ds EIMRegistryUser qualified dim;
   offsetToEIMCredentialInfoSublist uns(10);
 end-ds;
 
+// List information returned by the following APIs:
+//  eimGetTargetFromSource, eimGetTargetFromIdentifier, eimGetTargetC redsFromSource,
+//  eimGetTgtCredsFromIdentifier
 dcl-ds EIMTargetIdentity qualified;
-  offsetToNextEntry uns(10);
+  offsetToNextEntry uns(10); // Relative to the start of this structure
   // userName char(8);
   userNameLength uns(10);
   offsetToUserName uns(10);
@@ -381,29 +417,37 @@ dcl-ds EIMTargetIdentity qualified;
   offsetToEIMCredentialInfoSublist uns(10);
 end-ds;
 
+// Supplemental list information for the following structs:
+//  EimIdentifier
 dcl-ds EIMIdentifierName qualified;
-  offsetToNextEntry uns(10);
+  offsetToNextEntry uns(10); // Relative to the start of this structure
   // name char(8);
   nameLength uns(10);
   offsetToName uns(10);
 end-ds;
 
+// List information returned by the following APIs:
+//  eimGetRegistryNameFromAlias
 dcl-ds EIMRegistryName qualified;
-  offsetToNextEntry uns(10);
+  offsetToNextEntry uns(10); // Relative to the start of this structure
   // name char(8);
   nameLength uns(10);
   offsetToName uns(10);
 end-ds;
 
+// Supplemental list information for the following structs:
+//  EimRegistryUser, EimIdentifier
 dcl-ds EIMAddlInfo qualified;
-  offsetToNextEntry uns(10);
+  offsetToNextEntry uns(10); // Relative to the start of this structure
   // additionalInfo char(8);
   additionalInfoLength uns(10);
   offsetToAdditionalInfo uns(10);
 end-ds;
 
+// Supplemental list information for the following structs:
+//  EimRegistryUser, EimTargetIdentity
 dcl-ds EIMCredentialInfo qualified;
-  offsetToNextEntry uns(10);
+  offsetToNextEntry uns(10); // Relative to the start of this structure
   credentialType int(10);
   credentialStatus int(10);
   // credentialData char(8);
@@ -411,8 +455,10 @@ dcl-ds EIMCredentialInfo qualified;
   offsetToCredentialData uns(10);
 end-ds;
 
+// List information returned by the following APIs:
+//  eimListPolicyFilters
 dcl-ds EIMPolicyFilter qualified;
-  offsetToNextEntry uns(10);
+  offsetToNextEntry uns(10); // Relative to the start of this structure
   policyFilterType int(10);
   // targetSourceRegistry char(8);
   targetSourceRegistryNameLength uns(10);
@@ -422,8 +468,10 @@ dcl-ds EIMPolicyFilter qualified;
   offsetToFilterValue uns(10);
 end-ds;
 
+// List information returned by the following APIs:
+//  eimListRegistryAssociations
 dcl-ds EIMRegistryAssociation qualified;
-  offsetToNextEntry uns(10);
+  offsetToNextEntry uns(10); // Relative to the start of this structure
   associationType int(10);
   // targetRegistry char(8);
   targetRegistryNameLength uns(10);
@@ -446,30 +494,38 @@ dcl-ds EIMRegistryAssociation qualified;
   targetPolicyAssocStatus int(10);
 end-ds;
 
+// List information returned by the following APIs:
+//  eimFormatPolicyFilter
 dcl-ds EIMPolicyFilterValue qualified;
-  offsetToNextEntry uns(10);
+  offsetToNextEntry uns(10); // Relative to the start of this structure
   // generatedPolicyFilterValue char(8);
   generatedPolicyFilterValueLength uns(10);
   offsetToGeneratedPolicyFilterValue uns(10);
 end-ds;
 
+// Information returned by the following APIs:
+//  eimFormatUserIdentity
 dcl-ds EIMUserIdentity qualified;
-  bytesReturned uns(10);
-  bytesAvailable int(10);
+  bytesReturned uns(10); // Bytes actually returned by the API.
+  bytesAvailable int(10); // Bytes of available data that could be returned by the API.
   // userID char(8);
   userIDLength uns(10);
   offsetToUserID uns(10);
 end-ds;
 
+// List information returned by the following APIs:
+//  eimListAccess
 dcl-ds EIMAccess qualified;
-  offsetToNextEntry uns(10);
-  // userWithAccess char(8);
+  offsetToNextEntry uns(10); // Relative to the start of this structure
+  // userWithAccess char(8); // in the format of the dn for access id
   userWithAccessLength uns(10);
   offsetToUserWithAccess uns(10);
 end-ds;
 
+// List information returned by the following APIs:
+//  eimListUserAccess
 dcl-ds EIMUserAccess qualified;
-  offsetToNextEntry uns(10);
+  offsetToNextEntry uns(10); // Relative to the start of this structure
   EIMAdmin int(10);
   EIMRegAdmin int(10);
   EIMIdenAdmin int(10);
@@ -486,8 +542,10 @@ end-ds;
 //--------------------------------------
 
 
-// EIMCredentialInfo - values for "credentialStatus"
-// EIMRegistryAssociation - values for "domainPolicyAssociationStatus", "sourceMappingLookupStatus",
+// Shared special values for the following fields:
+// EIMConfig - "EIMDomainParticipationEnabled"
+// EIMCredentialInfo - "credentialStatus"
+// EIMRegistryAssociation - "domainPolicyAssociationStatus", "sourceMappingLookupStatus",
 //   "targetMappingLookupStatus", "targetPolicyAssocStatus"
 dcl-c DISABLED const(1);
 dcl-c ENABLED const(1);

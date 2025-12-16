@@ -27,6 +27,7 @@
 //--------------------------------------
 
 
+// Type Definition for the authentication caller information.
 dcl-ds QsyCallingInfo qualified;
   profileType int(10);
   profileTokenType char(1);
@@ -47,6 +48,7 @@ dcl-ds QsyAuthenticationCallerIn qualified;
   profileTokenType char(1);
 end-ds;
 
+// Type Definition for the Additional Authentication exit point information
 dcl-ds QsyAuthenticationInfo qualified;
   exitPointName char(20);
   exitPointFormat char(8);
@@ -75,6 +77,7 @@ end-ds;
 //--------------------------------------
 // Special values
 //--------------------------------------
+
 
 // QsyCallingInfo - "profileType" values
 dcl-c PROFILE_UNDEFINED const(0);

@@ -27,6 +27,7 @@
 //--------------------------------------
 
 
+// Type Definition for the Change Journal Receiver Exit Program information for format CRCV0100
 dcl-ds CRCV0100 qualified;
   exitInfoLength int(10);
   exitPoint char(20);

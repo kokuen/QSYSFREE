@@ -27,6 +27,7 @@
 //--------------------------------------
 
 
+// Type definition for format RTVC0100
 dcl-ds RTVC0100 qualified;
   exitPointName char(20);
   exitPointFormat char(8);

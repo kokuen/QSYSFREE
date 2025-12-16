@@ -27,6 +27,7 @@
 //--------------------------------------
 
 
+// Type Definitions for the Open Database File exit point information.
 dcl-ds OpenDatabaseFileArrayEntry qualified;
    fileName char(10);
    libraryName char(10);
@@ -38,7 +39,7 @@ dcl-ds OpenDatabaseFileArrayEntry qualified;
    openOutputOption char(1);
    openUpdateOption char(1);
    openDeleteOption char(1);
-   // varyingLength char(*);
+   // *n char(1) inz(x'00'); // Reserved by the system
 end-ds;
 
 dcl-ds DBOP0100 qualified;

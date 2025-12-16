@@ -27,6 +27,7 @@
 //--------------------------------------
 
 
+// Type Definition for the Change profile exit point information
 dcl-ds ChangeProfileFormat1 qualified;
   exitProgramName char(20);
   exitProgramFormat char(8);

@@ -27,6 +27,7 @@
 //--------------------------------------
 
 
+// Type definition for format CHGC0100
 dcl-ds CHGC0100 qualified;
   exitPointName char(20);
   exitPointFormat char(8);

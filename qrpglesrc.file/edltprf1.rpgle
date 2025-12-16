@@ -27,6 +27,7 @@
 //--------------------------------------
 
 
+// Type Definition for the Post-delete exit program information
 dcl-ds DeleteProfileFormat1 qualified;
   exitProgram char(20);
   exitProgramFormat char(8);

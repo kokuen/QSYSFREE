@@ -27,6 +27,8 @@
 //--------------------------------------
 
 
+// Type Definition for the Vary config exit point information for exit point formats PRON0100 (Pre
+//   vary on) and PROF0100 (Pre vary off).
 dcl-ds VaryConfigInfo_100 qualified;
   objectName char(10);
   objectType char(10);
@@ -34,6 +36,8 @@ dcl-ds VaryConfigInfo_100 qualified;
   forcedVary int(10);
 end-ds;
 
+// Type Definition for the Vary config exit point information for exit point formats PSON0200 (Post
+//  vary on) and PSOF0200 (Post vary off).
 dcl-ds VaryConfigInfo_200 qualified;
   objectName char(10);
   objectType char(10);

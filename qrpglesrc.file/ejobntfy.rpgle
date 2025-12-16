@@ -28,6 +28,7 @@
 //--------------------------------------
 
 
+// Type Definition for the Job Start and Job End Notification Messages
 dcl-ds JobStartEndNotify qualified;
   messageID char(10);
   messageFormat char(2);
@@ -45,6 +46,7 @@ dcl-ds JobStartEndNotify qualified;
   *n char(22) inz(x'00'); // Reserved by the system
 end-ds;
 
+// Type Definition for the Job Queue Notification Messages
 dcl-ds JobQueueNotify qualified dim;
   messageID char(10);
   messageFormat char(2);

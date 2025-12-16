@@ -27,6 +27,7 @@
 //--------------------------------------
 
 
+// Type Definition for the Create profile exit point information
 dcl-ds CreateProfile qualified;
   exitProgram char(20);
   exitProgramFormat char(8);

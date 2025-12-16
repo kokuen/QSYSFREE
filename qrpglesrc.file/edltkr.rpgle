@@ -27,12 +27,14 @@
 //--------------------------------------
 
 
+// Type Definition for the Delete Key Store Record Exit Program information
 dcl-ds DeleteKeystoreRecordInfo qualified;
   exitInfoLength int(10);
   keyLabel char(32);
   keyStoreFile char(20);
 end-ds;
 
+// Type Definition for the Delete Key Store Record Exit Program returned Status Information
 dcl-ds DeleteKeystoreRecordStatus qualified dim;
   statusInfoLength int(10);
   status char(1);

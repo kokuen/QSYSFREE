@@ -27,6 +27,7 @@
 //--------------------------------------
 
 
+// Type Definition for the Pre-delete exit program information
 dcl-ds DeleteProfileFormat2 qualified;
   exitProgram char(20);
   exitProgramFormat char(8);

@@ -85,12 +85,14 @@ end-ds;
 //--------------------------------------
 
 
-// IPRM0100 - values for "processingOption"
+// Shared special values for the following fields:
+//  IPRM0100 - "processingOption"
 dcl-c PROCESS_FILE const(20);
 dcl-c TRANSFORM_DATA const(30);
 dcl-c END_FILE const(40);
 dcl-c TERMINATE const(50);
 
-// IPRM0100 - values for "canTransform", "isDone"
+// Shared special values for the following fields:
+//  IPRM0100 - "canTransform", "isDone"
 dcl-c YES const(1);
 dcl-c NO const(0);

@@ -27,6 +27,7 @@
 //--------------------------------------
 
 
+// Type Definition for the Delete Journal Receiver Exit Program information for format DRCV0100
 dcl-ds DeleteJournalReceiverInfo_0100 qualified;
   exitinfoLength int(10);
   exitPoint char(20);
@@ -45,6 +46,7 @@ dcl-ds DeleteJournalReceiverInfo_0100 qualified;
   detachTimestamp char(13);
 end-ds;
 
+// Type Definition for the Delete Journal Receiver Exit Program returned Status Information
 dcl-ds DeleteJournalReceiverStatus qualified;
   statusInfoLength int(10);
   deleteStatus char(1);

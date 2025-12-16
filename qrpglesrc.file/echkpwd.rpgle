@@ -27,6 +27,7 @@
 //--------------------------------------
 
 
+// Type Definition for the Check Password exit point info
 dcl-ds CheckPasswordInfo qualified;
   exitPoint char(20);
   exitPointFormat char(8);
