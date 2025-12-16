@@ -15,9 +15,9 @@
 
 
 /if defined(dsqcommr)
-  /eof
+/eof
 /else
-  /define dsqcommr
+/define dsqcommr
 /endif
 
 
@@ -28,7 +28,7 @@
 
 dcl-ds QueryInterface qualified;
   queryExecutionStatus int(10);
-  saaQueryIdentifier int(10);
+  SAAQueryIdentifier int(10);
   *n char(44) inz(x'00'); // Reserved by the system
   completionMessageId char(8);
   queryMessageId char(8);
@@ -50,15 +50,27 @@ end-ds;
 //--------------------------------------
 
 
-dcl-enum query_execution_status qualified;
-  SUCCESS 0;
-  WARNING 4;
-  FAILURE 8;
-  SEVERE 16;
-end-enum;
+// Return code meanings
+dcl-c QUERY_STATUS_SUCCESS const(0);
+dcl-c QUERY_STATUS_WARNING const(4);
+dcl-c QUERY_STATUS_FAILURE const(8);
+dcl-c QUERY_STATUS_SEVERE const(16);
 
-//--------------------------------------
+// Cancel indicator meanings
+dcl-c CANCEL_YES const('1');
+dcl-c CANCEL_NO const('0');
 
+// QRYDFN derivation indicator meanings
+dcl-c DERIVED_YES const('1');
+dcl-c DERIVED_NO const('0');
+
+// Constants for the values returned for the DSQCATTN and DSQAROWC global variables
+dcl-c DSQ_YES const('1');
+dcl-c DSQ_NO const('0');
+
+// Interface program call name definition
 dcl-c INTERFACE_PROGRAM 'QQXMAIN';
+
+// Miscellaneous
 dcl-c CHAR 'CHAR';
 dcl-c FINT 'FINT';

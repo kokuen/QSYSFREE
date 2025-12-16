@@ -16,9 +16,9 @@
 
 
 /if defined(eauth1)
-  /eof
+/eof
 /else
-  /define eauth1
+/define eauth1
 /endif
 
 
@@ -76,28 +76,24 @@ end-ds;
 // Special values
 //--------------------------------------
 
+// QsyCallingInfo - "profileType" values
+dcl-c PROFILE_UNDEFINED const(0);
+dcl-c PROFILE_SIGNON_PASSWORD const(1);
+dcl-c PROFILE_GENERATE_TOKEN_PASSWORD const(2);
+dcl-c PROFILE_GENERATE_TOKEN_SPECIAL_VALUE const(3);
+dcl-c PROFILE_HANDLE_PASSWORD const(4);
+dcl-c PROFILE_HANDLE_SPECIAL_VALUE const(5);
+dcl-c PROFILE_NETSERVER const(6);
 
-dcl-enum profile_type qualified;
-  UNDEFINED 0;
-  SIGNON_PASSWORD 1;
-  GENERATE_TOKEN_PASSWORD 2;
-  GENERATE_TOKEN_SPECIAL_VALUE 3;
-  PROFILE_HANDLE_PASSWORD 4;
-  PROFILE_HANDLE_SPECIAL_VALUE 5;
-  NETSERVER 6;
-end-enum;
+// QsyCallingInfo - "profileTokenType" values
+dcl-c TOKLEN_NOT_GENERATE const(*blank);
+dcl-c TOKLEN_SINGLE_USE const('1');
+dcl-c TOKLEN_MULTI_USE const('2');
+dcl-c TOKLEN_MULTI_USE_REGEN const('3');
 
-dcl-enum token_type qualified;
-  NOT_GENERATE *blank;
-  SINGLE_USE '1';
-  MULTI_USE '2';
-  MULTI_USE_REGEN '3';
-end-enum;
-
-dcl-enum authentication_type qualified;
-  UNDEFINED 0;
-  KERBEROS 1;
-  SSH_KEY 2;
-  USER_MAPPED_TOKEN 3;
-  APPLICATION_AUTH 4;
-end-enum;
+// QsyAuthenticationCallerIn - "authenticationType" values
+dcl-c AUTHENTICATION_UNDEFINED const(0);
+dcl-c AUTHENTICATION_KERBEROS const(1);
+dcl-c AUTHENTICATION_SSH_KEY const(2);
+dcl-c AUTHENTICATION_USER_MAPPED_TOKEN const(3);
+dcl-c AUTHENTICATION_APPLICATION_AUTH const(4);
