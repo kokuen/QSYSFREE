@@ -5,13 +5,15 @@
 // Header File Name: EJOBNTFY
 // Descriptive Name: Job Notification Exit Point Declares
 // 
-// Description: The Job Notification Exit Point can be used to log notification messages to data
-//  queues when an OS/400 job goes through certain transitions.
+// Description: 
+//  The Job Notification Exit Point can be used to log notification messages to data queues when an 
+//  OS/400 job goes through certain transitions.
 //  Refer to the exit point documentation in the information center for additional information.
 // 
 // Header Files Included: None.
 // Macros List: None.
-// Structure List: Qwt_Job_Start_End_Notify_t, Qwt_Job_Queue_Notify_t
+// Structure List: 
+//  Qwt_Job_Start_End_Notify_t, Qwt_Job_Queue_Notify_t
 // Function Prototype List: None.
 //----------------------------------------------------------
 
@@ -29,7 +31,7 @@
 
 
 // Type Definition for the Job Start and Job End Notification Messages
-dcl-ds JobStartEndNotify qualified;
+dcl-ds Qwt_Job_Start_End_Notify_t qualified;
   messageID char(10);
   messageFormat char(2);
   internalJobID char(16);
@@ -47,7 +49,7 @@ dcl-ds JobStartEndNotify qualified;
 end-ds;
 
 // Type Definition for the Job Queue Notification Messages
-dcl-ds JobQueueNotify qualified dim;
+dcl-ds Qwt_Job_Queue_Notify_t qualified dim;
   messageID char(10);
   messageFormat char(2);
   internalJobID char(16);

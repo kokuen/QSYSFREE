@@ -5,12 +5,14 @@
 // Header File Name: EAUTH1
 // Descriptive Name: Additional Authentication Exit Program
 // 
-// Description: The Additional Authentication exit program provides notification when a user is
-//  being authenticated.           
+// Description:
+//  The Additional Authentication exit program provides notification when a user is being 
+//  authenticated.
 // 
 // Header Files Included: None.
 // Macros List: None.
-// Structure List: Qsy_Authentication_Info_t
+// Structure List:
+//  Qsy_Authentication_Info_t
 // Function Prototype List: None.
 //----------------------------------------------------------
 
@@ -49,7 +51,7 @@ dcl-ds QsyAuthenticationCallerIn qualified;
 end-ds;
 
 // Type Definition for the Additional Authentication exit point information
-dcl-ds QsyAuthenticationInfo qualified;
+dcl-ds Qsy_Authentication_Info_t qualified;
   exitPointName char(20);
   exitPointFormat char(8);
   userProfile char(10);

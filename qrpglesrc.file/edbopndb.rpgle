@@ -5,12 +5,14 @@
 // Header File Name: EDBOPNDB
 // Descriptive Name: Open Database Exit Program
 // 
-// Description: The Open Database File exit program provides the Exit Program with a list of files
-//  referenced in the open and their open options.
+// Description: 
+//  The Open Database File exit program provides the Exit Program with a list of files referenced
+//   in the open and their open options.
 // 
 // Header Files Included: None.
 // Macros List: None.
-// Structure List: QDBE_Opn_DB_File_Array_Entry_t, QDBE_Open_DBOP0100_t
+// Structure List:
+//  QDBE_Opn_DB_File_Array_Entry_t, QDBE_Open_DBOP0100_t
 // Function Prototype List: None.
 //----------------------------------------------------------
 
@@ -28,7 +30,7 @@
 
 
 // Type Definitions for the Open Database File exit point information.
-dcl-ds OpenDatabaseFileArrayEntry qualified;
+dcl-ds QDBE_Opn_DB_File_Array_Entry_t qualified;
    fileName char(10);
    libraryName char(10);
    memberName char(10);
@@ -42,7 +44,7 @@ dcl-ds OpenDatabaseFileArrayEntry qualified;
    // *n char(1) inz(x'00'); // Reserved by the system
 end-ds;
 
-dcl-ds DBOP0100 qualified;
+dcl-ds QDBE_Open_DBOP0100_t qualified;
    headerSize int(10);
    format char(8);
    offsetToFileArray int(10);

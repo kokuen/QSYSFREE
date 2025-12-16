@@ -30,7 +30,7 @@
 
 
 // Type Definition for the Operational Information
-dcl-ds OperationInfo qualified;
+dcl-ds Qmo_Operational_Info_Struct_t qualified;
   operationalInfoLength int(10);
   controlValueInfoLength int(10);
   opticalOperation char(10);
@@ -38,6 +38,6 @@ dcl-ds OperationInfo qualified;
 end-ds;
 
 // Type Definition for the Control Value Information
-dcl-ds ControlValueInfo qualified;
+dcl-ds Qmo_Control_Value_Info_Struct_t qualified;
   volumeAcceptance char(1);
 end-ds;

@@ -3,7 +3,7 @@ Conversion of the IBM QSYSINC library rpgle copy members to fully free format.
 
 # What has been converted?
 All of the data structures and constants that are in the rpgle copy members of the QSYSINC library.
-Comments have been included in the convertion to the best extent to stay relevent.  
+Comments have been included in the convertion to the best extent to stay relevent. 
 
 # What has been modified?
 ## Names

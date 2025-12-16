@@ -5,12 +5,13 @@
 // Header File Name: ECHKPWD1
 // Descriptive Name: Validate Password Exit Program
 // 
-// Description: The Check Password exit program provides notification of a password being checked
-//  by CHGUSRPRF (QSYUP).
+// Description: 
+//  The Check Password exit program provides notification of a password being checked by CHGUSRPRF (QSYUP).
 // 
 // Header Files Included: None.
 // Macros List: None.
-// Structure List: Qsy_Chk_Password_Info_t
+// Structure List: 
+//  Qsy_Chk_Password_Info_t
 // Function Prototype List: None.
 //----------------------------------------------------------
 
@@ -28,7 +29,7 @@
 
 
 // Type Definition for the Check Password exit point info
-dcl-ds CheckPasswordInfo qualified;
+dcl-ds Qsy_Chk_Password_Info_t qualified;
   exitPoint char(20);
   exitPointFormat char(8);
   passwordLevel int(10);

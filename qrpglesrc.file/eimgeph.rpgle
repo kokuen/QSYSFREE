@@ -5,7 +5,8 @@
 // Header File Name: EIMGEPH
 // Descriptive Name: Convert Image API exit program defines
 // 
-// Description: Structures passed between the Convert Image API and user-defined exit programs.
+// Description:
+//  Structures passed between the Convert Image API and user-defined exit programs.
 // 
 // Header Files Included: None.
 // Macros List: None.
@@ -26,7 +27,7 @@
 //--------------------------------------
 
 
-dcl-ds XFRM0100 qualified;
+dcl-ds Qimg_XFRM0100 qualified;
   structureVersion char(8);
   structureLength int(10);
   inputFileFormat int(10);
@@ -67,7 +68,7 @@ dcl-ds XFRM0100 qualified;
   *n char(24) inz(x'00'); // Reserved by the system
 end-ds;
 
-dcl-ds IPRM0100 qualified;
+dcl-ds Qimg_IPRM0100 qualified;
   structureVersion char(8);
   structureLength int(10);
   processingOption int(10);

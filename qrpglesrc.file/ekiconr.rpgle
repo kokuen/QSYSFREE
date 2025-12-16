@@ -5,7 +5,8 @@
 // Header File Name: EKICONR
 // Descriptive Name: PrintManager RPG Constants
 // 
-// Description: This copy file contains constants to be used by RPG applications using PrintManager.
+// Description: 
+//  This copy file contains constants to be used by RPG applications using PrintManager.
 // 
 // Header Files Included: None.
 // Macros List: None.

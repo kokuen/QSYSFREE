@@ -5,7 +5,8 @@
 // Header File Name: eim.h
 // Descriptive Name: Enterprise Identity Mapping (EIM) APIs
 // 
-// Description: Defines prototypes, macros, variables, and structures to be used with the EIM APIs.
+// Description:
+//  Defines prototypes, macros, variables, and structures to be used with the EIM APIs.
 // 
 // Header Files Included: None.
 // Macros List: None.

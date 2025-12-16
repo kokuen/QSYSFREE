@@ -5,12 +5,14 @@
 // Header File Name: ECACHCMD
 // Descriptive Name: Command Analyzer Change Exit Program
 // 
-// Description: The Command Analyzer Change Exit Program allows an application to change the 
-//  command that will be run by the command analyzer.
+// Description: 
+//  The Command Analyzer Change Exit Program allows an application to change the command that will
+//  be run by the command analyzer.
 // 
 // Header Files Included: None.
 // Macros List: None.
-// Structure List: Qca_Chg_CHGC0100_t
+// Structure List:
+//  Qca_Chg_CHGC0100_t
 // Function Prototype List: None.
 //----------------------------------------------------------
 
@@ -28,7 +30,7 @@
 
 
 // Type definition for format CHGC0100
-dcl-ds CHGC0100 qualified;
+dcl-ds Qca_Chg_CHGC0100_t qualified;
   exitPointName char(20);
   exitPointFormat char(8);
   commandName char(10);

@@ -5,12 +5,13 @@
 // Header File Name: ECRTPRF1
 // Descriptive Name: Create User Profile Exit Program
 // 
-// Description: The Create User Profile exit program provides the notification of profiles being 
-//  created.
+// Description:  
+//  The Create User Profile exit program provides the notification of profiles being created.
 // 
 // Header Files Included: None.
 // Macros List: None.
-// Structure List: Qsy_Create_Profile_Fmt1_t
+// Structure List: 
+//  Qsy_Create_Profile_Fmt1_t
 // Function Prototype List: None.
 //----------------------------------------------------------
 
@@ -28,7 +29,7 @@
 
 
 // Type Definition for the Create profile exit point information
-dcl-ds CreateProfile qualified;
+dcl-ds Qsy_Create_Profile_Fmt1_t qualified;
   exitProgram char(20);
   exitProgramFormat char(8);
   userProfile char(10);

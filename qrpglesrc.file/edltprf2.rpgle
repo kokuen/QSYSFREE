@@ -5,12 +5,13 @@
 // Header File Name: EDLTPRF2
 // Descriptive Name: Delete User Profile Exit Program
 // 
-// Description: The Delete User Profile exit program provides the notification of profiles being 
-//  deleted.
+// Description:  
+//  The Delete User Profile exit program provides the notification of profiles being deleted.
 // 
 // Header Files Included: None.
 // Macros List: None.
-// Structure List: Qsy_Delete_Profile_Fmt2_t (format 2)
+// Structure List: 
+//  Qsy_Delete_Profile_Fmt2_t (format 2)
 // Function Prototype List: None.
 //----------------------------------------------------------
 
@@ -28,7 +29,7 @@
 
 
 // Type Definition for the Pre-delete exit program information
-dcl-ds DeleteProfileFormat2 qualified;
+dcl-ds Qsy_Delete_Profile_Fmt2_t qualified;
   exitProgram char(20);
   exitProgramFormat char(8);
   userProfile char(10);

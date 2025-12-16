@@ -5,12 +5,14 @@
 // Header File Name: ECHGRCV1
 // Descriptive Name: Change Journal Receiver Exit Program
 // 
-// Description: The Change Journal Receiver exit program allows code to be notified of a journal
-//  receiver that has been detached. See exit point QIBM_QJO_CHG_JRNRCV.
+// Description: 
+//  The Change Journal Receiver exit program allows code to be notified of a journal receiver that
+//  has been detached. See exit point QIBM_QJO_CHG_JRNRCV.
 // 
 // Header Files Included: None.
 // Macros List: None.
-// Structure List: Qjo_Chg_JrnRcv_Info_CRCV0100_t
+// Structure List:
+//  Qjo_Chg_JrnRcv_Info_CRCV0100_t
 // Function Prototype List: None.
 //----------------------------------------------------------
 
@@ -28,7 +30,7 @@
 
 
 // Type Definition for the Change Journal Receiver Exit Program information for format CRCV0100
-dcl-ds CRCV0100 qualified;
+dcl-ds Qjo_Chg_JrnRcv_Info_CRCV0100_t qualified;
   exitInfoLength int(10);
   exitPoint char(20);
   exitPointFormat char(8);

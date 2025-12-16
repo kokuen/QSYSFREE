@@ -5,12 +5,14 @@
 // Header File Name: ECARTCMD
 // Descriptive Name: Command Analyzer Retrieve Exit Program
 // 
-// Description: This header file describes the structure that is passed to an exit program
-//  associated with the QIBM_QCA_RTV_COMMAND exit point for a command being run by Command Analyzer.
+// Description:
+//  This header file describes the structure that is passed to an exit program associated with the
+//  QIBM_QCA_RTV_COMMAND exit point for a command being run by Command Analyzer.
 // 
 // Header Files Included: None.
 // Macros List: None.
-// Structure List: Qca_Rtv_RTVC0100_t
+// Structure List:
+//  Qca_Rtv_RTVC0100_t
 // Function Prototype List: None.
 //----------------------------------------------------------
 
@@ -28,7 +30,7 @@
 
 
 // Type definition for format RTVC0100
-dcl-ds RTVC0100 qualified;
+dcl-ds Qca_Rtv_RTVC0100_t qualified;
   exitPointName char(20);
   exitPointFormat char(8);
   commandName char(10);

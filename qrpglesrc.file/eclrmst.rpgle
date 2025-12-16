@@ -5,12 +5,14 @@
 // Header File Name: ECLRMST
 // Descriptive Name: Clear Master Key Exit Program
 // 
-// Description: The Clear Master Key exit program is called both and after a master key version is 
-//  cleared. See exit point QIBM_QC3_CLR_MSTKEY.
+// Description:  
+//  The Clear Master Key exit program is called both and after a master key version is cleared.
+//  See exit point QIBM_QC3_CLR_MSTKEY.
 // 
 // Header Files Included: None.
 // Macros List: None.
-// Structure List: Qc3_Clr_MstKey_Info_t, Qc3_Clr_MstKey_Status_t
+// Structure List: 
+//  Qc3_Clr_MstKey_Info_t, Qc3_Clr_MstKey_Status_t
 // Function Prototype List: None.
 //----------------------------------------------------------
 
@@ -28,14 +30,14 @@
 
 
 // Type Definition for the Clear Master Key Exit Program information
-dcl-ds MasterKeyInfo qualified;
+dcl-ds Qc3_Clr_MstKey_Info_t qualified;
   exitInfoLength int(10);
   masterKeyID int(10);
   version char(1);
 end-ds;
 
 // Type Definition for the Clear Master Key Exit Program returned Status Information
-dcl-ds MasterKeyStatus qualified;
+dcl-ds Qc3_Clr_MstKey_Status_t qualified;
   statusInfoLength int(10);
   clearStatus char(1);
 end-ds;

@@ -5,7 +5,8 @@
 // Header File Name: DSQCOMMR
 // Descriptive Name: CPI-C Header.
 //
-// Description: This is the CLE header for the CPI-C API.
+// Description:
+//  This is the CLE header for the CPI-C API.
 // 
 // Header Files Included: none. 
 // Macros List: none.

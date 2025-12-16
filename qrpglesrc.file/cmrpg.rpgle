@@ -5,8 +5,9 @@
 // NAME:  DSQCOMMR
 // MODULE-TYPE: IBM Query Management/400 interface include file.
 // 
-// DESCRIPTION: This include file contains the declarations needed by an RPG/400 application
-//  program for interfacing with the Query Manager/400 Callable Interface.
+// DESCRIPTION: 
+//  This include file contains the declarations needed by an RPG/400 application program for
+//  interfacing with the Query Manager/400 Callable Interface.
 //  Query Management is the AS/400 implementation of the Systems Application Architecture Query
 //  Callable Programming Interface.
 //----------------------------------------------------------
