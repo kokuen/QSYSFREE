@@ -78,3 +78,19 @@ dcl-ds IPRM0100 qualified;
   padding char(2);
   isDone char(1);
 end-ds;
+
+
+//--------------------------------------
+// Special values
+//--------------------------------------
+
+
+// IPRM0100 - values for "processingOption"
+dcl-c PROCESS_FILE const(20);
+dcl-c TRANSFORM_DATA const(30);
+dcl-c END_FILE const(40);
+dcl-c TERMINATE const(50);
+
+// IPRM0100 - values for "canTransform", "isDone"
+dcl-c YES const(1);
+dcl-c NO const(0);
