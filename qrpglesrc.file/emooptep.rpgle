@@ -1,6 +1,13 @@
 **free
 //----------------------------------------------------------
-// All original rights and credits goes to IBM.
+// Product(s):
+//  5722-SS1
+//
+// Copyright:
+//  IBM Corp.  2007, 2007 - All rights reserved.
+//  US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP 
+//  Schedule Contract with IBM Corp.
+//  Licensed Materials-Property of IBM
 //
 // Header File Name: EMOOPTEP
 // Descriptive Name: Optical Exit Point.
@@ -10,11 +17,23 @@
 //  optical volumes for selected operations by the operating system.
 // 
 // Header Files Included: None.
+// 
 // Macros List: None.
+// 
 // Structure List:
-//  Qmo_Operational_Info_Struct_t, Qmo_Control_Value_Info_Struct_t
+//  Qmo_Operational_Info_Struct_t
+//  Qmo_Control_Value_Info_Struct_t
+// 
 // Function Prototype List: None.
+// 
+// Change Activity:
+//  D93327.6, V5R5, 2006-10-26: New Include
 //----------------------------------------------------------
+
+
+//--------------------------------------
+// Include guard
+//--------------------------------------
 
 
 /if defined(emooptep)

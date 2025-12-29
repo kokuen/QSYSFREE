@@ -1,6 +1,13 @@
 **free
 //----------------------------------------------------------
-// All original rights and credits goes to IBM.
+// Product(s):
+//  5722-SS1
+//
+// Copyright:
+//  IBM Corp.  2003, 2007 - All rights reserved.
+//  US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP 
+//  Schedule Contract with IBM Corp.
+//  Licensed Materials-Property of IBM
 //
 // Header File Name: EDBOPNDB
 // Descriptive Name: Open Database Exit Program
@@ -10,11 +17,25 @@
 //   in the open and their open options.
 // 
 // Header Files Included: None.
+// 
 // Macros List: None.
+// 
 // Structure List:
-//  QDBE_Opn_DB_File_Array_Entry_t, QDBE_Open_DBOP0100_t
+//  QDBE_Opn_DB_File_Array_Entry_t
+//  QDBE_Open_DBOP0100_t
+// 
 // Function Prototype List: None.
+// 
+// Change Activity:
+//  D94085.6, V5R3, 2003-09-31: New Include
+//  P9A47712, V5R3, 2003-11-21: Add current user name
+//  D93549.13, V5R5, 2007-02-20: QDBE_Query_Open
 //----------------------------------------------------------
+
+
+//--------------------------------------
+// Include guard
+//--------------------------------------
 
 
 /if defined(edbopndb)
@@ -22,11 +43,6 @@
 /else
   /define edbopndb
 /endif
-
-
-//--------------------------------------
-// Data structures
-//--------------------------------------
 
 
 // Type Definitions for the Open Database File exit point information.

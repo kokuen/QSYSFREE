@@ -1,7 +1,14 @@
 **free
 //----------------------------------------------------------
-// All original rights and credits goes to IBM.
+// Product(s):
+//  5761-SS1
 //
+// Copyright:
+//  IBM Corp. 1996,1996 - All rights reserved.
+//  US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP 
+//  Schedule Contract with IBM Corp.
+//  Licensed Materials-Property of IBM
+// 
 // Header File Name: ECHGRCV1
 // Descriptive Name: Change Journal Receiver Exit Program
 // 
@@ -10,11 +17,22 @@
 //  has been detached. See exit point QIBM_QJO_CHG_JRNRCV.
 // 
 // Header Files Included: None.
+// 
 // Macros List: None.
+// 
 // Structure List:
 //  Qjo_Chg_JrnRcv_Info_CRCV0100_t
+// 
 // Function Prototype List: None.
+// 
+// Change Activity:
+//  D9346800, V6R1, 2006-01-06: New Include
 //----------------------------------------------------------
+
+
+//--------------------------------------
+// Include guard
+//--------------------------------------
 
 
 /if defined(echgrcv1)
@@ -22,11 +40,6 @@
 /else
   /define echgrcv1
 /endif
-
-
-//--------------------------------------
-// Data structures
-//--------------------------------------
 
 
 // Type Definition for the Change Journal Receiver Exit Program information for format CRCV0100

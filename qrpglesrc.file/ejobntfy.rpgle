@@ -1,6 +1,13 @@
 **free
 //----------------------------------------------------------
-// All original rights and credits goes to IBM.
+// Product(s):
+//  5722-SS1
+//
+// Copyright:
+//  IBM Corp.  2002, 2007 - All rights reserved.
+//  US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP 
+//  Schedule Contract with IBM Corp.
+//  Licensed Materials-Property of IBM
 //
 // Header File Name: EJOBNTFY
 // Descriptive Name: Job Notification Exit Point Declares
@@ -11,11 +18,26 @@
 //  Refer to the exit point documentation in the information center for additional information.
 // 
 // Header Files Included: None.
+//
 // Macros List: None.
+//
 // Structure List: 
-//  Qwt_Job_Start_End_Notify_t, Qwt_Job_Queue_Notify_t
+//  Qwt_Job_Start_End_Notify_t
+//  Qwt_Job_Queue_Notify_t
+// 
 // Function Prototype List: None.
+// 
+// Change Activity:
+//  D98603, V5R2, 2001-04-03: New Include
+//  D98359, V5R3, 2002-07-19: Add new fields
+//  P9A10011, V5R3, 2002-08-12: Add job type/subtype
+//  D93793, V5R5, 2006-06-29: Add JOBQ ASP
 //----------------------------------------------------------
+
+
+//--------------------------------------
+// Include guard
+//--------------------------------------
 
 
 /if defined(ejobntfy)

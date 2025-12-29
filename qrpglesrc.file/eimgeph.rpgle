@@ -1,6 +1,14 @@
 **free
 //----------------------------------------------------------
-// All original rights and credits goes to IBM.
+// Product(s):
+//  5769-SS1
+//  5722-SS1
+//
+// Copyright:
+//  IBM Corp. 2001,2002 - All rights reserved.
+//  US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP 
+//  Schedule Contract with IBM Corp.
+//  Licensed Materials-Property of IBM
 //
 // Header File Name: EIMGEPH
 // Descriptive Name: Convert Image API exit program defines
@@ -9,10 +17,23 @@
 //  Structures passed between the Convert Image API and user-defined exit programs.
 // 
 // Header Files Included: None.
+//
 // Macros List: None.
+//
 // Structure List: None.
+// 
 // Function Prototype List: None.
+// 
+// Change Activity:
+//  D97941, V5R1, 1999-08-26: Created
+//  D98795, V5R2, 2004-01-16: Writer MsgQ Support
+//  D97260, V5R2, 2004-01-16: Decoupled splf from job support
 //----------------------------------------------------------
+
+
+//--------------------------------------
+// Include guard
+//--------------------------------------
 
 
 /if defined(eimgeph)

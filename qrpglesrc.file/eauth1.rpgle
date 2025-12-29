@@ -1,20 +1,38 @@
 **free
 //----------------------------------------------------------
-// All original rights and credits goes to IBM.
+// Product(s):
+//  5770-SS1
 //
+// Copyright:
+//  IBM Corp.  2024, 2024 - All rights reserved.
+//  US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP 
+//  Schedule Contract with IBM Corp.
+//  Licensed Materials-Property of IBM
+// 
 // Header File Name: EAUTH1
 // Descriptive Name: Additional Authentication Exit Program
 // 
-// Description:
+// Description: 
 //  The Additional Authentication exit program provides notification when a user is being 
 //  authenticated.
 // 
 // Header Files Included: None.
+// 
 // Macros List: None.
+// 
 // Structure List:
 //  Qsy_Authentication_Info_t
+// 
 // Function Prototype List: None.
+// 
+// Change Activity:
+//  PPD0021TL, V7R6, 2023-08-06: New Include
 //----------------------------------------------------------
+
+
+//--------------------------------------
+// Include guard
+//--------------------------------------
 
 
 /if defined(eauth1)

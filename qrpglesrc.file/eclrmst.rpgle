@@ -1,6 +1,13 @@
 **free
 //----------------------------------------------------------
-// All original rights and credits goes to IBM.
+// Product(s):
+//  5761-SS1
+//
+// Copyright:
+//  IBM Corp.  2007, 2007 - All rights reserved.
+//  US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP 
+//  Schedule Contract with IBM Corp.
+//  Licensed Materials-Property of IBM
 //
 // Header File Name: ECLRMST
 // Descriptive Name: Clear Master Key Exit Program
@@ -10,11 +17,23 @@
 //  See exit point QIBM_QC3_CLR_MSTKEY.
 // 
 // Header Files Included: None.
+// 
 // Macros List: None.
+// 
 // Structure List: 
-//  Qc3_Clr_MstKey_Info_t, Qc3_Clr_MstKey_Status_t
+//  Qc3_Clr_MstKey_Info_t
+//  Qc3_Clr_MstKey_Status_t
+// 
 // Function Prototype List: None.
+// 
+// Change Activity:
+//  Dxxxxxxxx, V6R1,2006-09-15: New Include
 //----------------------------------------------------------
+
+
+//--------------------------------------
+// Include guard
+//--------------------------------------
 
 
 /if defined(eclrmst)
@@ -22,11 +41,6 @@
 /else
   /define eclrmst
 /endif
-
-
-//--------------------------------------
-// Data structures
-//--------------------------------------
 
 
 // Type Definition for the Clear Master Key Exit Program information

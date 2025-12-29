@@ -1,19 +1,38 @@
 **free
 //----------------------------------------------------------
-// All original rights and credits goes to IBM.
+// Product(s):
+//  5722-SS1
+//
+// Copyright:
+//  IBM Corp.  2005, 2005 - All rights reserved.
+//  US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP 
+//  Schedule Contract with IBM Corp.
+//  Licensed Materials-Property of IBM
 //
 // Header File Name: ECHKPWD1
 // Descriptive Name: Validate Password Exit Program
 // 
 // Description: 
-//  The Check Password exit program provides notification of a password being checked by CHGUSRPRF (QSYUP).
+//  The Check Password exit program provides notification of a password being checked by CHGUSRPRF 
+//  (QSYUP).
 // 
 // Header Files Included: None.
+// 
 // Macros List: None.
+// 
 // Structure List: 
 //  Qsy_Chk_Password_Info_t
+// 
 // Function Prototype List: None.
+// 
+// Change Activity:
+//  D99718, V5R4, 2003-08-25: New Include
 //----------------------------------------------------------
+
+
+//--------------------------------------
+// Include guard
+//--------------------------------------
 
 
 /if defined(echkpwd1)
@@ -21,11 +40,6 @@
 /else
   /define echkpwd1
 /endif
-
-
-//--------------------------------------
-// Data structures
-//--------------------------------------
 
 
 // Type Definition for the Check Password exit point info

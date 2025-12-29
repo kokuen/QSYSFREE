@@ -1,6 +1,13 @@
 **free
 //----------------------------------------------------------
-// All original rights and credits goes to IBM.
+// Product(s):
+//  5722-SS1
+//
+// Copyright:
+//  IBM Corp. 2003 - All rights reserved.
+//  US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP 
+//  Schedule Contract with IBM Corp.
+//  Licensed Materials-Property of IBM
 //
 // Header File Name: EDCVARY
 // Descriptive Name: Vary configuration Exit Program
@@ -9,11 +16,23 @@
 //  The vary configuration exit program provides the notification of objects being varied.
 // 
 // Header Files Included: None.
+// 
 // Macros List: None.
+// 
 // Structure List:
-// Qdc_Vary_Config_Info_100t, Qdc_Vary_Config_Info_200t
+//  Qdc_Vary_Config_Info_100t
+//  Qdc_Vary_Config_Info_200t
+// 
 // Function Prototype List: None.
+// 
+// Change Activity:
+//  D99409, V5R3, 2002-10-01: New Include
 //----------------------------------------------------------
+
+
+//--------------------------------------
+// Include guard
+//--------------------------------------
 
 
 /if defined(edcvary)
@@ -21,11 +40,6 @@
 /else
   /define edcvary
 /endif
-
-
-//--------------------------------------
-// Data structures
-//--------------------------------------
 
 
 // Type Definition for the Vary config exit point information for exit point formats PRON0100 (Pre

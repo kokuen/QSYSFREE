@@ -1,6 +1,13 @@
 **free
 //----------------------------------------------------------
-// All original rights and credits goes to IBM.
+// Product(s):
+//  5763-SS1
+//
+// Copyright:
+//  IBM Corp. 1994,1994 - All rights reserved.
+//  US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP 
+//  Schedule Contract with IBM Corp.
+//  Licensed Materials-Property of IBM
 //
 // Header File Name: H/EOK
 // Descriptive Name: Office Exit Program Common Information.
@@ -10,11 +17,30 @@
 //  Programs.
 // 
 // Header Files Included: None.
+// 
 // Macros List: None.
+// 
 // Structure List:
-//  Eok_Common_0100_t, Eok_Common_0200_t, Eok_Common_0300_t, Eok_User_Defined_t
+//  Eok_Common_0100_t
+//  Eok_Common_0200_t
+//  Eok_Common_0300_t
+//  Eok_User_Defined_t
+// 
 // Function Prototype List: None.
+// 
+// Change Activity:
+//  D2862000, V3R1, 1994-04-22: New Common Include
+//  D95344.2, V4R2, 1997-03-31: Add new SDD field for Allow Synchronization
+//    (It goes in the reserved 1-char area before the User Def. Field information in the EOKC0100 
+//    structure)
+//  D94424.1, V4R3, 1997-08-04: Add new SDD field for the DLO Owner
+//    (It goes in the Common 0100 Format after the EOKNUDF field)
 //----------------------------------------------------------
+
+
+//--------------------------------------
+// Include guard
+//--------------------------------------
 
 
 /if defined(eok)

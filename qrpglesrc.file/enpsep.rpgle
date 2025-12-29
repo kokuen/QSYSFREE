@@ -1,11 +1,18 @@
 **free
 //----------------------------------------------------------
-// All original rights and credits goes to IBM.
+// Product(s):
+//  5716-SS1
+//
+// Copyright:
+//  IBM Corp. 1994,1995 - All rights reserved.
+//  US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP 
+//  Schedule Contract with IBM Corp.
+//  Licensed Materials-Property of IBM
 //
 // Header File Name: H/ENPSEP
 // Descriptive Name: Network Print Server Exit Program structures
 // 
-// Description: 
+// Description:   
 //  This include defines the parameter structures for the two exit points defined for the Network
 //  Print Server.
 //  1) QIBM_QNPS_ENTRY format ENTR0100
@@ -14,11 +21,26 @@
 //    Called for a specified spooled file
 // 
 // Header Files Included: None.
+// 
 // Macros List: None.
+// 
 // Structure List:
-//  Qnps_Server_Info_t, Qnps_Exit_Pgm_RC_t, Qnps_Splf_ID_t, Qnps_Exit_Pgm_Data_t
+//  Qnps_Server_Info_t
+//  Qnps_Exit_Pgm_RC_t
+//  Qnps_Splf_ID_t
+//  Qnps_Exit_Pgm_Data_t
+// 
 // Function Prototype List: None.
+// 
+// Change Activity:
+//  P3981775, V3R6, 1995-02-08: New Include
+//  D97260, V5R2, 2001-07-23: Decouple spooled files
 //----------------------------------------------------------
+
+
+//--------------------------------------
+// Include guard
+//--------------------------------------
 
 
 /if defined(enpsep)

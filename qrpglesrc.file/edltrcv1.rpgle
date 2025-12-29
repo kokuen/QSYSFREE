@@ -1,6 +1,13 @@
 **free
 //----------------------------------------------------------
-// All original rights and credits goes to IBM.
+// Product(s):
+//  5769-SS1
+//
+// Copyright:
+//  IBM Corp. 1997 - All rights reserved.
+//  US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP 
+//  Schedule Contract with IBM Corp.
+//  Licensed Materials-Property of IBM
 //
 // Header File Name: EDLTRCV1
 // Descriptive Name: Delete Journal Receiver Exit Program
@@ -10,11 +17,23 @@
 //  can be deleted or not. See exit point QIBM_QJO_DLT_JRNRCV. 
 // 
 // Header Files Included: None.
+// 
 // Macros List: None.
+// 
 // Structure List:
-//  Qjo_Dlt_JrnRcv_Info_DRCV0100_t, Qjo_Dlt_JrnRcv_Status_t
+//  Qjo_Dlt_JrnRcv_Info_DRCV0100_t
+//  Qjo_Dlt_JrnRcv_Status_t
+// 
 // Function Prototype List: None.
+// 
+// Change Activity:
+//  D9485900, V4R2,1997-03-11: New Include
 //----------------------------------------------------------
+
+
+//--------------------------------------
+// Include guard
+//--------------------------------------
 
 
 /if defined(edltrcv1)
@@ -22,11 +41,6 @@
 /else
   /define edltrcv1
 /endif
-
-
-//--------------------------------------
-// Data structures
-//--------------------------------------
 
 
 // Type Definition for the Delete Journal Receiver Exit Program information for format DRCV0100

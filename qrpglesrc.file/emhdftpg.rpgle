@@ -1,6 +1,13 @@
 **free
 //----------------------------------------------------------
-// All original rights and credits goes to IBM.
+// Product(s):
+//  5716-SS1
+//
+// Copyright:
+//  IBM Corp. 1995,1995 - All rights reserved.
+//  US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP 
+//  Schedule Contract with IBM Corp.
+//  Licensed Materials-Property of IBM
 //
 // Header File Name: EMHDFTPG
 // Descriptive Name: Default handling exit program's parameter structure for receiving program
@@ -8,16 +15,27 @@
 // 
 // Description:   
 //  The ADDMSGD (add message description) command or CHGMSGD (change message description) command
-//  can be used to identify that a user-written program should be called. The program is called
-//  when the particular message is sent as an escape message and the program or procedure that the
-//  message was sent to was not monitoring for the message.
+//  can be used to identify that a user-written program should be called.
+//  The program is called when the particular message is sent as an escape message and the program 
+//  or procedure that the message was sent to was not monitoring for the message.
 // 
 // Header Files Included: None.
+//
 // Macros List: None.
+//
 // Structure List: 
 //  Qmh_Receiving_Program_Info_t
+// 
 // Function Prototype List: None.
+// 
+// Change Activity:
+//  P3980706, V3R6, 1995-02-15: New Include
 //----------------------------------------------------------
+
+
+//--------------------------------------
+// Include guard
+//--------------------------------------
 
 
 /if defined(emhdftpg)

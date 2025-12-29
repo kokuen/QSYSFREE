@@ -1,6 +1,13 @@
 **free
 //----------------------------------------------------------
-// All original rights and credits goes to IBM.
+// Product(s):
+//  5722-SS1
+//
+// Copyright:
+//  IBM Corp.  2002, 2004 - All rights reserved.
+//  US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP 
+//  Schedule Contract with IBM Corp.
+//  Licensed Materials-Property of IBM
 //
 // Header File Name: eim.h
 // Descriptive Name: Enterprise Identity Mapping (EIM) APIs
@@ -9,10 +16,31 @@
 //  Defines prototypes, macros, variables, and structures to be used with the EIM APIs.
 // 
 // Header Files Included: None.
+//
 // Macros List: None.
+//
 // Structure List: None.
+// 
 // Function Prototype List: None.
+// 
+// Change Activity:
+//  D9860600, V5R2, 2002-02-02: New Include
+//  P9A04903, V5R2, 2002-03-30: Fix AIX registry type
+//  D9121900, V5R3, 2002-12-15: Add policy support + Add message catalog Id numbers
+//  D9121908, V5R3, 2002-12-15: Add new config. + Add assoc type to EimIdentifier struct
+//  D9121910, V5R3, 2003-02-16: Reorganize structures
+//  P9A26515, V5R3, 2003-03-30: Add linux registry type
+//  P9A28411, V5R3, 2003-05-18: Add Tivoli Access Manager type + duplicate of Policy Director
+//  P9A28415, V5R3, 2003-07-20: Add Domino reg types
+//  P9A35259, V5R3, 2003-08-03: Add new Windows reg type defines
+//  P9A36692, V5R3, 2003-08-31: Add eimGetVersion
+//  P9A78104, V5R3, 2004-10-01: Add credential and registry group support
 //----------------------------------------------------------
+
+
+//--------------------------------------
+// Include guard
+//--------------------------------------
 
 
 /if defined(eim)

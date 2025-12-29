@@ -1,6 +1,12 @@
 **free
 //----------------------------------------------------------
-// All original rights and credits goes to IBM.
+// Product(s): None.
+//
+// Copyright:
+//  IBM Corp. - All rights reserved.
+//  US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP 
+//  Schedule Contract with IBM Corp.
+//  Licensed Materials-Property of IBM
 //
 // Header File Name: EKICONR
 // Descriptive Name: PrintManager RPG Constants
@@ -9,10 +15,20 @@
 //  This copy file contains constants to be used by RPG applications using PrintManager.
 // 
 // Header Files Included: None.
+//
 // Macros List: None.
+//
 // Structure List: None.
+// 
 // Function Prototype List: None.
+// 
+// Change Activity: None.
 //----------------------------------------------------------
+
+
+//--------------------------------------
+// Include guard
+//--------------------------------------
 
 
 /if defined(ekiconr)

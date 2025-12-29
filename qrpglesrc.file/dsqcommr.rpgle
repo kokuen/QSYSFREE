@@ -1,18 +1,38 @@
 **free
 //----------------------------------------------------------
-// All original rights and credits goes to IBM.
+// Product(s):
+//  5763-SS1
 //
-// Header File Name: DSQCOMMR
-// Descriptive Name: CPI-C Header.
-//
-// Description:
-//  This is the CLE header for the CPI-C API.
+// Copyright:
+//  IBM Corp.  1989, 1994 - All rights reserved.
+//  US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP 
+//  Schedule Contract with IBM Corp.
+//  Licensed Materials-Property of IBM
 // 
-// Header Files Included: none. 
-// Macros List: none.
-// Structure List:
-// Function Prototype List:
+// Header File Name: DSQCOMMR
+// Descriptive Name: IBM Query Management/400 interface include file.
+// 
+// Description: 
+//  This include file contains the declarations needed by an RPG/400 application program for 
+//  interfacing with the Query Manager/400 Callable Interface.
+//  Query Management is the AS/400 implementation of the Systems Application Architecture Query 
+//  Callable Programming Interface.
+// 
+// Header Files Included: None.
+// 
+// Macros List: None.
+// 
+// Structure List: None.
+// 
+// Function Prototype List: None.
+// 
+// Change Activity: None.
 //----------------------------------------------------------
+
+
+//--------------------------------------
+// Include guard
+//--------------------------------------
 
 
 /if defined(dsqcommr)
@@ -27,7 +47,7 @@
 //--------------------------------------
 
 
-dcl-ds QueryInterface qualified;
+dcl-ds Dsq_Query_Communication_Interface qualified;
   queryExecutionStatus int(10);
   SAAQueryIdentifier int(10);
   *n char(44) inz(x'00'); // Reserved by the system

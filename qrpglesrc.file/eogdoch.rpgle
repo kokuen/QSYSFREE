@@ -1,6 +1,13 @@
 **free
 //----------------------------------------------------------
-// All original rights and credits goes to IBM.
+// Product(s):
+//  5763-SS1
+//
+// Copyright:
+//  IBM Corp. 1994,1994 - All rights reserved.
+//  US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP 
+//  Schedule Contract with IBM Corp.
+//  Licensed Materials-Property of IBM
 //
 // Header File Name: H/EOGDOCH
 // Descriptive Name: Document Handleing Exit Program.
@@ -10,13 +17,31 @@
 //  to the OfficeVision/400 word processor.
 // 
 // Header Files Included: None.
+// 
 // Macros List: None.
+// 
 // Structure List:
-//  Qog_Doci_DOCI0100_t, Qog_Doci_DOCI0200_t, Qog_Doci_DOCI0300_t, Qog_Doci_DOCI0400_t, 
-//  Qog_Doci_DOCI0500_t, Qog_Doci_DOCI0600_t, Qog_Doci_DOCI0700_t, Qog_Doci_DOCI0800_t,
-//  Qog_Doci_DOCI0900_t, Qog_Doci_Recipient_List_t
+//  Qog_Doci_DOCI0100_t
+//  Qog_Doci_DOCI0200_t
+//  Qog_Doci_DOCI0300_t
+//  Qog_Doci_DOCI0400_t
+//  Qog_Doci_DOCI0500_t
+//  Qog_Doci_DOCI0600_t
+//  Qog_Doci_DOCI0700_t
+//  Qog_Doci_DOCI0800_t
+//  Qog_Doci_DOCI0900_t
+//  Qog_Doci_Recipient_List_t
+// 
 // Function Prototype List: None.
+// 
+// Change Activity:
+//  D2862000, V3R1, 1994-04-15: New Include
 //----------------------------------------------------------
+
+
+//--------------------------------------
+// Include guard
+//--------------------------------------
 
 
 /if defined(eogdoch)
