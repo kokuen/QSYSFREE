@@ -44,9 +44,9 @@
 
 
 /if defined(eokdrsp)
-/eof 
+  /eof 
 /else
-/define eokdrsp
+  /define eokdrsp
 /endif
 
 
@@ -164,7 +164,7 @@ dcl-ds Qok_Supp_SUPP0100_t qualified;
   offsetUserDefFields       int(10);
   numberUserDefFields       int(10);
   DLOOwner                  char(10);
-end-ds;
+end-ds Qok_Supp_SUPP0100_t;
 
 // Directory Entry Format SUPP0200.
 dcl-ds Qok_Supp_SUPP0200_t qualified;
@@ -185,7 +185,7 @@ dcl-ds Qok_Supp_SUPP0200_t qualified;
   oldDepartment         char(10);
   characterSet04        int(10);
   codePage04            int(10);
-end-ds;
+end-ds Qok_Supp_SUPP0200_t;
 
 // Directory Entry Format SUPP0300.
 dcl-ds Qok_Supp_SUPP0300_t qualified;
@@ -222,4 +222,4 @@ dcl-ds Qok_Supp_SUPP0300_t qualified;
   oldLocation     char(40);
   characterSet09  int(10);
   codePage09      int(10);
-end-ds;
+end-ds Qok_Supp_SUPP0300_t;

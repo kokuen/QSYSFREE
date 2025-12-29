@@ -54,13 +54,13 @@
 // NOTE: The following type definition only defines the fixed portion of the format.  Any varying 
 //  length field will have to be defined by the user.
 dcl-ds Qmh_Receiving_Program_Info_t qualified;
-  programName char(10);
-  moduleName char(10);
-  procedureName char(256);
-  programType char(1);
-  *n char(2) inz(x'00'); // Reserved by the system
+  programName       char(10);
+  moduleName        char(10);
+  procedureName     char(256);
+  programType       char(1);
+  *n                char(2)     inz(x'00'); // Reserved by the system
   OffsetToProcedure int(10);
-  ProcedureLength int(10);
-  // *n char(*); Reserved by the system
-  // procedures char(*);
-end-ds;
+  ProcedureLength   int(10);
+  // *n             char(*);    inz(x'00'); // Reserved by the system
+  // procedures     char(*);
+end-ds Qmh_Receiving_Program_Info_t;

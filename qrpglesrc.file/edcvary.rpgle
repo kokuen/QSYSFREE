@@ -50,17 +50,17 @@
 // Type Definition for the Vary config exit point information for exit point formats PRON0100 (Pre
 //   vary on) and PROF0100 (Pre vary off).
 dcl-ds Qdc_Vary_Config_Info_100t qualified;
-  objectName char(10);
-  objectType char(10);
+  objectName        char(10);
+  objectType        char(10);
   exitProgramFormat char(8);
-  forcedVary int(10);
-end-ds;
+  forcedVary        int(10);
+end-ds Qdc_Vary_Config_Info_100t;
 
 // Type Definition for the Vary config exit point information for exit point formats PSON0200 (Post
 //  vary on) and PSOF0200 (Post vary off).
 dcl-ds Qdc_Vary_Config_Info_200t qualified;
-  objectName char(10);
-  objectType char(10);
+  objectName        char(10);
+  objectType        char(10);
   exitProgramFormat char(8);
-  varyStatus int(10);
-end-ds;
+  varyStatus        int(10);
+end-ds Qdc_Vary_Config_Info_200t;

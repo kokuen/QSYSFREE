@@ -54,34 +54,34 @@
 
 // Type Definition for the Job Start and Job End Notification Messages
 dcl-ds Qwt_Job_Start_End_Notify_t qualified;
-  messageID char(10);
-  messageFormat char(2);
-  internalJobID char(16);
-  qualifiedJob char(26);
-  qualifiedJobQueue char(20);
+  messageID               char(10);
+  messageFormat           char(2);
+  internalJobID           char(16);
+  qualifiedJob            char(26);
+  qualifiedJobQueue       char(20);
   jobSystemEntryTimestamp char(8);
-  jobStartTimestamp char(8);
-  jobEndTimestamp char(8);
-  jobType char(1);
-  jobSubtype char(1);
-  jobEndSeverity int(10);
-  processingUnitTime int(20);
-  jobQueueASPDevice char(10);
-  *n char(22) inz(x'00'); // Reserved by the system
-end-ds;
+  jobStartTimestamp       char(8);
+  jobEndTimestamp         char(8);
+  jobType                 char(1);
+  jobSubtype              char(1);
+  jobEndSeverity          int(10);
+  processingUnitTime      int(20);
+  jobQueueASPDevice       char(10);
+  *n                      char(22)    inz(x'00'); // Reserved by the system
+end-ds Qwt_Job_Start_End_Notify_t;
 
 // Type Definition for the Job Queue Notification Messages
 dcl-ds Qwt_Job_Queue_Notify_t qualified dim;
-  messageID char(10);
-  messageFormat char(2);
-  internalJobID char(16);
-  qualifiedJob char(26);
-  qualifiedJobQueue char(20);
+  messageID               char(10);
+  messageFormat           char(2);
+  internalJobID           char(16);
+  qualifiedJob            char(26);
+  qualifiedJobQueue       char(20);
   jobSystemEntryTimestamp char(8);
-  *n char(16) inz(x'00'); // Reserved by the system
-  jobType char(1);
-  jobSubtype char(1);
-  *n char(12) inz(x'00'); // Reserved by the system
-  jobQueueASPDevice char(10);
-  *n char(22) inz(x'00'); // Reserved by the system
-end-ds;
+  *n                      char(16)  inz(x'00'); // Reserved by the system
+  jobType                 char(1);
+  jobSubtype              char(1);
+  *n                      char(12)  inz(x'00'); // Reserved by the system
+  jobQueueASPDevice       char(10);
+  *n                      char(22)  inz(x'00'); // Reserved by the system
+end-ds Qwt_Job_Queue_Notify_t;

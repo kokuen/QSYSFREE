@@ -52,31 +52,31 @@
 
 // Type Definitions for the Open Database File exit point information.
 dcl-ds QDBE_Opn_DB_File_Array_Entry_t qualified;
-   fileName char(10);
-   libraryName char(10);
-   memberName char(10);
-   *n char(2) inz(x'00'); // Reserved by the system
-   fileType int(10);
+   fileName           char(10);
+   libraryName        char(10);
+   memberName         char(10);
+   *n                 char(2)   inz(x'00'); // Reserved by the system
+   fileType           int(10);
    underlyingPhysical int(10);
-   openInputOption char(1);
-   openOutputOption char(1);
-   openUpdateOption char(1);
-   openDeleteOption char(1);
-   // *n char(1) inz(x'00'); // Reserved by the system
-end-ds;
+   openInputOption    ind;
+   openOutputOption   ind;
+   openUpdateOption   ind;
+   openDeleteOption   ind;
+   // reserved        char(1); // Varying length
+end-ds QDBE_Opn_DB_File_Array_Entry_t;
 
 dcl-ds QDBE_Open_DBOP0100_t qualified;
-   headerSize int(10);
-   format char(8);
-   offsetToFileArray int(10);
-   fileCount int(10);
+   headerSize           int(10);
+   format               char(8);
+   offsetToFileArray    int(10);
+   fileCount            int(10);
    lengthFileArrayEntry int(10);
-   jobName char(10);
-   userName char(10);
-   jobNumber char(6);
-   currentUserProfile char(10);
-   queryOpen char(1);
-end-ds;
+   jobName              char(10);
+   userName             char(10);
+   jobNumber            char(6);
+   openingUserProfile   char(10);
+   queryOpen            ind;
+end-ds QDBE_Open_DBOP0100_t;
 
   // EDBFILI00 char(45) dim(1);
   // EDBDBEFN04 char(10) overlay(EDBFILI00: 1);

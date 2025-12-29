@@ -50,13 +50,13 @@
 
 // Type Definition for the Delete Key Store Record Exit Program information
 dcl-ds Qc3_Dlt_Keystore_Rec_Info_t qualified;
-  exitInfoLength int(10);
-  keyLabel char(32);
-  keyStoreFile char(20);
-end-ds;
+  exitInfoLength  int(10);
+  keyLabel        char(32);
+  keyStoreFile    char(20);
+end-ds Qc3_Dlt_Keystore_Rec_Info_t;
 
 // Type Definition for the Delete Key Store Record Exit Program returned Status Information
 dcl-ds Qc3_Dlt_Keystore_Rec_Status_t qualified dim;
-  statusInfoLength int(10);
-  status char(1);
-end-ds;
+  statusInfoLength  int(10);
+  status            char(1);
+end-ds Qc3_Dlt_Keystore_Rec_Status_t;

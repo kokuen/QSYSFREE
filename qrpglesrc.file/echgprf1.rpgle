@@ -49,7 +49,7 @@
 
 // Type Definition for the Change profile exit point information
 dcl-ds Qsy_Change_Profile_Fmt1_t qualified;
-  exitProgramName char(20);
+  exitProgramName   char(20);
   exitProgramFormat char(8);
-  userProfile char(10);
-end-ds;
+  userProfile       char(10);
+end-ds Qsy_Change_Profile_Fmt1_t;

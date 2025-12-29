@@ -49,15 +49,15 @@
 
 // Type Definition for the Change Journal Receiver Exit Program information for format CRCV0100
 dcl-ds Qjo_Chg_JrnRcv_Info_CRCV0100_t qualified;
-  exitInfoLength int(10);
-  exitPoint char(20);
-  exitPointFormat char(8);
-  journalReceiver char(10);
-  journalReceiverLibrary char(10);
-  journal char(10);
-  journalLibrary char(10);
-  ASPDevice char(10);
-  journalType char(1);
-  remoteJournalType char(1);
-  detachTimestamp char(13);
-end-ds;
+  exitInfoLength          int(10);
+  exitPoint               char(20);
+  exitPointFormat         char(8);
+  journalReceiver         char(10);
+  journalReceiverLibrary  char(10);
+  journal                 char(10);
+  journalLibrary          char(10);
+  ASPDevice               char(10);
+  journalType             char(1);
+  remoteJournalType       char(1);
+  detachTimestamp         char(13);
+end-ds Qjo_Chg_JrnRcv_Info_CRCV0100_t;

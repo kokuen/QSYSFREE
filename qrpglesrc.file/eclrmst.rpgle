@@ -50,13 +50,13 @@
 
 // Type Definition for the Clear Master Key Exit Program information
 dcl-ds Qc3_Clr_MstKey_Info_t qualified;
-  exitInfoLength int(10);
-  masterKeyID int(10);
-  version char(1);
-end-ds;
+  exitInfoLength  int(10);
+  masterKeyID     int(10);
+  version         char(1);
+end-ds Qc3_Clr_MstKey_Info_t;
 
 // Type Definition for the Clear Master Key Exit Program returned Status Information
 dcl-ds Qc3_Clr_MstKey_Status_t qualified;
-  statusInfoLength int(10);
-  clearStatus char(1);
-end-ds;
+  statusInfoLength  int(10);
+  clearStatus       char(1);
+end-ds Qc3_Clr_MstKey_Status_t;

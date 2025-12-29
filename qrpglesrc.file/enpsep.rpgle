@@ -57,33 +57,33 @@
 
 // Typedef for Entry exit point format and typedef for Spooled File exit point format
 dcl-ds Qnps_Server_Info_t qualified;
-  userProfile char(10);
-  serverID char(10);
-  userExitFormat char(8);
+  userProfile         char(10);
+  serverID            char(10);
+  userExitFormat      char(8);
   requestedFunctionId int(10);
-end-ds;
+end-ds Qnps_Server_Info_t;
 
 // Typedef for Spooled File return code format common to all NPS Exit Points
 dcl-ds Qnps_Exit_Pgm_RC_t qualified;
   dcl-s value char(1);
-end-ds;
+end-ds Qnps_Exit_Pgm_RC_t;
 
 // Typedef for Spooled File ID 
 // Specific to QIBM_QNPS_SPLF
 dcl-ds Qnps_Splf_ID_t qualified;
-  jobName char(10);
-  userProfile char(10);
-  jobNumber char(6);
-  spoolName char(10);
-  spoolNumber int(10);
+  jobName       char(10);
+  userProfile   char(10);
+  jobNumber     char(6);
+  spoolName     char(10);
+  spoolNumber   int(10);
   jobSystemName char(8);
-  creationDate char(7);
-  creationTime char(6);
-end-ds;
+  creationDate  char(7);
+  creationTime  char(6);
+end-ds Qnps_Splf_ID_t;
 
 // Typedef for Exit Program Data
 // Specific to QIBM_QNPS_SPLF
 dcl-ds Qnps_Exit_Pgm_Data_t qualified;
-  dataLength int(10);
-  data char(1); // Intended to be a variable length array but it can not be easily defined
-end-ds;
+  dataLength  int(10);
+  data        char(1); // Intended to be a variable length array but it can not be easily defined
+end-ds Qnps_Exit_Pgm_Data_t;

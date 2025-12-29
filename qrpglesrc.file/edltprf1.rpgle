@@ -48,7 +48,7 @@
 
 // Type Definition for the Post-delete exit program information
 dcl-ds Qsy_Delete_Profile_Fmt1_t qualified;
-  exitProgram char(20);
+  exitProgram       char(20);
   exitProgramFormat char(8);
-  userProfile char(10);
-end-ds;
+  userProfile       char(10);
+end-ds Qsy_Delete_Profile_Fmt1_t;

@@ -52,17 +52,17 @@
 
 // Type definition for format CHGC0100
 dcl-ds Qca_Chg_CHGC0100_t qualified;
-  exitPointName char(20);
-  exitPointFormat char(8);
-  commandName char(10);
-  libraryName char(10);
-  changeAllowed char(1);
-  promptRequested char(1);
-  *n char(2) inz(x'00'); // Reserved by the system
+  exitPointName         char(20);
+  exitPointFormat       char(8);
+  commandName           char(10);
+  libraryName           char(10);
+  changeAllowed         ind;
+  promptRequested       ind;
+  *n                    char(2) inz(x'00'); // Reserved by the system
   offsetToCommandString int(10);
-  commandStringLength int(10);
-  offsetToProxyChain int(10);
-  proxyChainEntries int(10);
-  // commandString char(*)
-  // proxyCommandChain char(*)
-end-ds;
+  commandStringLength   int(10);
+  offsetToProxyChain    int(10);
+  proxyChainEntries     int(10);
+  // commandString      char(*)
+  // proxyCommandChain  char(*)
+end-ds Qca_Chg_CHGC0100_t;

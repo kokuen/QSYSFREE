@@ -52,11 +52,11 @@
 // NOTE: The following type definition only defines the fixed portion of the format. Any varying 
 //  length field will have to be defined by the user.
 dcl-ds Qok_Search_ARRAY_t qualified;
-  usedSelectionOption char(1);
-  userID char(8);
-  userAddress char(8);
-  usersFullNameOrDescription char(50);
-end-ds;
+  usedSelectionOption         char(1);
+  userID                      char(8);
+  userAddress                 char(8);
+  usersFullNameOrDescription  char(50);
+end-ds Qok_Search_ARRAY_t;
 
 // Varying length
 // dcl-ds OKSA qualified;
@@ -64,4 +64,4 @@ end-ds;
 //   EOKUID00 char(8);
 //   EOKUA00 char(8);
 //   EOKUFNOD00 char(50);
-// end-ds;
+// end-ds OKSA;

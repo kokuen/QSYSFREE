@@ -49,17 +49,17 @@
 
 // Type Definition for the Check Password exit point info
 dcl-ds Qsy_Chk_Password_Info_t qualified;
-  exitPoint char(20);
-  exitPointFormat char(8);
-  passwordLevel int(10);
-  userProfile char(10);
-  *n char(2) inz(x'00'); // Reserved by the system
+  exitPoint           char(20);
+  exitPointFormat     char(8);
+  passwordLevel       int(10);
+  userProfile         char(10);
+  *n                  char(2)   inz(x'00'); // Reserved by the system
   offsetToOldPassword int(10);
-  oldPasswordLength int(10);
-  oldPasswordCCSID int(10);
+  oldPasswordLength   int(10);
+  oldPasswordCCSID    int(10);
   offsetToNewPassword int(10);
-  newPasswordLength int(10);
-  newPasswordCCSID int(10);
-  // old Password char(*)
-  // new Password char(*)
-end-ds;
+  newPasswordLength   int(10);
+  newPasswordCCSID    int(10);
+  // oldPassword      char(*)
+  // newPassword      char(*)
+end-ds Qsy_Chk_Password_Info_t;

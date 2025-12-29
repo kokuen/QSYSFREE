@@ -53,20 +53,20 @@
 
 // Type definition for format RTVC0100
 dcl-ds Qca_Rtv_RTVC0100_t qualified;
-  exitPointName char(20);
-  exitPointFormat char(8);
-  commandName char(10);
-  libraryName char(10);
-  *n char(2) inz(x'00'); // Reserved by the system
-  calledAfterCommand char(1);
-  *n char(1) inz(x'00'); // Reserved by the system
-  offsetToOriginalCommandString int(10);
-  originalCommandStringLength int(10);
-  offsetToReplacementCommandString int(10);
-  replacementCommandStringLength int(10);
-  offsetToProxyChain int(10);
-  proxyChainEntries int(10);
-  // originalCommandString char(*)
-  // replacementCommandString char(*)
-  // proxyChain char(*) 
-end-ds;
+  exitPointName                     char(20);
+  exitPointFormat                   char(8);
+  commandName                       char(10);
+  libraryName                       char(10);
+  *n                                char(2)   inz(x'00'); // Reserved by the system
+  calledAfterCommand                ind;
+  *n                                char(1)   inz(x'00'); // Reserved by the system
+  offsetToOriginalCommandString     int(10);
+  originalCommandStringLength       int(10);
+  offsetToReplacementCommandString  int(10);
+  replacementCommandStringLength    int(10);
+  offsetToProxyChain                int(10);
+  proxyChainEntries                 int(10);
+  // originalCommandString          char(*)
+  // replacementCommandString       char(*)
+  // proxyChain                     char(*) 
+end-ds Qca_Rtv_RTVC0100_t;

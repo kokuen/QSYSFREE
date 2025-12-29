@@ -50,13 +50,13 @@
 
 // Type Definition for the Operational Information
 dcl-ds Qmo_Operational_Info_Struct_t qualified;
-  operationalInfoLength int(10);
-  controlValueInfoLength int(10);
-  opticalOperation char(10);
-  volumeID char(32);
-end-ds;
+  operationalInfoLength   int(10);
+  controlValueInfoLength  int(10);
+  opticalOperation        char(10);
+  volumeID                char(32);
+end-ds Qmo_Operational_Info_Struct_t;
 
 // Type Definition for the Control Value Information
 dcl-ds Qmo_Control_Value_Info_Struct_t qualified;
-  volumeAcceptance char(1);
-end-ds;
+  volumeAcceptance  char(1);
+end-ds Qmo_Control_Value_Info_Struct_t;

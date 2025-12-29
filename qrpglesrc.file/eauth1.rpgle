@@ -36,9 +36,9 @@
 
 
 /if defined(eauth1)
-/eof
+  /eof
 /else
-/define eauth1
+  /define eauth1
 /endif
 
 
@@ -49,49 +49,49 @@
 
 // Type Definition for the authentication caller information.
 dcl-ds QsyCallingInfo qualified;
-  profileType int(10);
-  profileTokenType char(1);
-end-ds;
+  profileType       int(10);
+  profileTokenType  char(1);
+end-ds QsyCallingInfo;
 
 dcl-ds QsyAuthenticationCallerIn qualified;
-  remotePort int(10);
-  localPort int(10);
+  remotePort            int(10);
+  localPort             int(10);
   remoteIPAddressLength int(10);
-  localIPAddressLength int(10);
-  remoteIPAddress char(46);
-  localIPAddress char(46);
-  verificationId char(30);
-  *n char(2) inz(x'00'); // Reserved by the system
-  authenticationType int(10); 
-  // callingInfo char(5);
-  callingInterface int(10);
-  profileTokenType char(1);
-end-ds;
+  localIPAddressLength  int(10);
+  remoteIPAddress       char(46);
+  localIPAddress        char(46);
+  verificationId        char(30);
+  *n                    char(2)   inz(x'00'); // Reserved by the system
+  authenticationType    int(10); 
+  // callingInfo        char(5);
+  callingInterface      int(10);
+  profileTokenType      char(1);
+end-ds QsyAuthenticationCallerIn;
 
 // Type Definition for the Additional Authentication exit point information
 dcl-ds Qsy_Authentication_Info_t qualified;
-  exitPointName char(20);
-  exitPointFormat char(8);
-  userProfile char(10);
-  *n char(2) inz(x'00'); // Reserved by the system
+  exitPointName           char(20);
+  exitPointFormat         char(8);
+  userProfile             char(10);
+  *n                      char(2)   inz(x'00'); // Reserved by the system
   offseToAdditionalFactor int(10);
-  additionalFactorLength int(10);
-  additionalFactorCCSID int(10);
-  // char(149) Authentication Caller
-  remotePort int(10);
-  localPort int(10);
-  remoteIPAddressLength int(10);
-  localIPAddressLength int(10);
-  remoteIPAddress char(46);
-  localIPAddress char(46);
-  verificationId char(30);
-  *n char(2) inz(x'00'); // Reserved by the system
+  additionalFactorLength  int(10);
+  additionalFactorCCSID   int(10);
+  // authenticationCaller char(149) 
+  remotePort              int(10);
+  localPort               int(10);
+  remoteIPAddressLength   int(10);
+  localIPAddressLength    int(10);
+  remoteIPAddress         char(46);
+  localIPAddress          char(46);
+  verificationId          char(30);
+  *n                      char(2)   inz(x'00'); // Reserved by the system
   authenticationIndicator int(10);
-  // callingInfo char(5);
-  callingInterface int(10);
-  profileTokenType char(1);
-  // additionalFactor char(*)
-end-ds;
+  // callingInfo          char(5);
+  callingInterface        int(10);
+  profileTokenType        char(1);
+  // additionalFactor     char(*)
+end-ds Qsy_Authentication_Info_t;
 
 
 //--------------------------------------
@@ -100,23 +100,23 @@ end-ds;
 
 
 // QsyCallingInfo - "profileType" values
-dcl-c PROFILE_UNDEFINED const(0);
-dcl-c PROFILE_SIGNON_PASSWORD const(1);
-dcl-c PROFILE_GENERATE_TOKEN_PASSWORD const(2);
-dcl-c PROFILE_GENERATE_TOKEN_SPECIAL_VALUE const(3);
-dcl-c PROFILE_HANDLE_PASSWORD const(4);
-dcl-c PROFILE_HANDLE_SPECIAL_VALUE const(5);
-dcl-c PROFILE_NETSERVER const(6);
+dcl-c PROFILE_UNDEFINED                     const(0);
+dcl-c PROFILE_SIGNON_PASSWORD               const(1);
+dcl-c PROFILE_GENERATE_TOKEN_PASSWORD       const(2);
+dcl-c PROFILE_GENERATE_TOKEN_SPECIAL_VALUE  const(3);
+dcl-c PROFILE_HANDLE_PASSWORD               const(4);
+dcl-c PROFILE_HANDLE_SPECIAL_VALUE          const(5);
+dcl-c PROFILE_NETSERVER                     const(6);
 
 // QsyCallingInfo - "profileTokenType" values
-dcl-c TOKLEN_NOT_GENERATE const(*blank);
-dcl-c TOKLEN_SINGLE_USE const('1');
-dcl-c TOKLEN_MULTI_USE const('2');
-dcl-c TOKLEN_MULTI_USE_REGEN const('3');
+dcl-c TOKLEN_NOT_GENERATE     const(*blank);
+dcl-c TOKLEN_SINGLE_USE       const('1');
+dcl-c TOKLEN_MULTI_USE        const('2');
+dcl-c TOKLEN_MULTI_USE_REGEN  const('3');
 
 // QsyAuthenticationCallerIn - "authenticationType" values
-dcl-c AUTHENTICATION_UNDEFINED const(0);
-dcl-c AUTHENTICATION_KERBEROS const(1);
-dcl-c AUTHENTICATION_SSH_KEY const(2);
-dcl-c AUTHENTICATION_USER_MAPPED_TOKEN const(3);
-dcl-c AUTHENTICATION_APPLICATION_AUTH const(4);
+dcl-c AUTHENTICATION_UNDEFINED          const(0);
+dcl-c AUTHENTICATION_KERBEROS           const(1);
+dcl-c AUTHENTICATION_SSH_KEY            const(2);
+dcl-c AUTHENTICATION_USER_MAPPED_TOKEN  const(3);
+dcl-c AUTHENTICATION_APPLICATION_AUTH   const(4);
