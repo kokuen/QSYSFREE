@@ -45,6 +45,11 @@
 /endif
 
 
+//--------------------------------------
+// Data structures
+//--------------------------------------
+
+
 // Type Definitions for the Open Database File exit point information.
 dcl-ds QDBE_Opn_DB_File_Array_Entry_t qualified;
    fileName char(10);

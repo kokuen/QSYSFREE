@@ -42,6 +42,11 @@
 /endif
 
 
+//--------------------------------------
+// Data structures
+//--------------------------------------
+
+
 // Type Definition for the Check Password exit point info
 dcl-ds Qsy_Chk_Password_Info_t qualified;
   exitPoint char(20);

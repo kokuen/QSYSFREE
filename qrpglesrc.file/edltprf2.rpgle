@@ -41,6 +41,11 @@
 /endif
 
 
+//--------------------------------------
+// Data structures
+//--------------------------------------
+
+
 // Type Definition for the Pre-delete exit program information
 dcl-ds Qsy_Delete_Profile_Fmt2_t qualified;
   exitProgram char(20);

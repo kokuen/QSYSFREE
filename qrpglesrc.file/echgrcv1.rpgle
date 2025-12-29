@@ -42,6 +42,11 @@
 /endif
 
 
+//--------------------------------------
+// Data structures
+//--------------------------------------
+
+
 // Type Definition for the Change Journal Receiver Exit Program information for format CRCV0100
 dcl-ds Qjo_Chg_JrnRcv_Info_CRCV0100_t qualified;
   exitInfoLength int(10);

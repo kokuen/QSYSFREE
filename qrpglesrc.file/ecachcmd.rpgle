@@ -45,6 +45,11 @@
 /endif
 
 
+//--------------------------------------
+// Data structures
+//--------------------------------------
+
+
 // Type definition for format CHGC0100
 dcl-ds Qca_Chg_CHGC0100_t qualified;
   exitPointName char(20);

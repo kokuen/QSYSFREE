@@ -42,6 +42,11 @@
 /endif
 
 
+//--------------------------------------
+// Data structures
+//--------------------------------------
+
+
 // Type Definition for the Vary config exit point information for exit point formats PRON0100 (Pre
 //   vary on) and PROF0100 (Pre vary off).
 dcl-ds Qdc_Vary_Config_Info_100t qualified;

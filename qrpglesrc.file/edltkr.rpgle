@@ -43,6 +43,11 @@
 /endif
 
 
+//--------------------------------------
+// Data structures
+//--------------------------------------
+
+
 // Type Definition for the Delete Key Store Record Exit Program information
 dcl-ds Qc3_Dlt_Keystore_Rec_Info_t qualified;
   exitInfoLength int(10);

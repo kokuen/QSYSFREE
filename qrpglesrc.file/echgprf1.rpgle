@@ -41,6 +41,12 @@
 /endif
 
 
+//--------------------------------------
+// Data structures
+//--------------------------------------
+
+
+
 // Type Definition for the Change profile exit point information
 dcl-ds Qsy_Change_Profile_Fmt1_t qualified;
   exitProgramName char(20);

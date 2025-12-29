@@ -41,6 +41,11 @@
 /endif
 
 
+//--------------------------------------
+// Data structures
+//--------------------------------------
+
+
 // Type Definition for the Create profile exit point information
 dcl-ds Qsy_Create_Profile_Fmt1_t qualified;
   exitProgram char(20);

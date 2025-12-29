@@ -46,6 +46,11 @@
 /endif
 
 
+//--------------------------------------
+// Data structures
+//--------------------------------------
+
+
 // Type definition for format RTVC0100
 dcl-ds Qca_Rtv_RTVC0100_t qualified;
   exitPointName char(20);

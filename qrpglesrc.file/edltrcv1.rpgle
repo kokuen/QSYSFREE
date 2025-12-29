@@ -43,6 +43,11 @@
 /endif
 
 
+//--------------------------------------
+// Data structures
+//--------------------------------------
+
+
 // Type Definition for the Delete Journal Receiver Exit Program information for format DRCV0100
 dcl-ds Qjo_Dlt_JrnRcv_Info_DRCV0100_t qualified;
   exitinfoLength int(10);

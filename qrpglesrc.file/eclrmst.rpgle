@@ -43,6 +43,11 @@
 /endif
 
 
+//--------------------------------------
+// Data structures
+//--------------------------------------
+
+
 // Type Definition for the Clear Master Key Exit Program information
 dcl-ds Qc3_Clr_MstKey_Info_t qualified;
   exitInfoLength int(10);
