@@ -29,9 +29,9 @@
 // Function Prototype List: None.
 // 
 // Change Activity:
-//  D9193500, V3R6, 1995-01-31: New Include
-//  D98212.1, V5R1, 2000-10-06: Teraspace stage 2
-//  RFW629185, V7R3, 2014-10-07: PWFS0200, QPWFS_COPY, Qpwfs_Exit_Parms200_t
+//  D9193500  1995-01-31  V3R6  New Include
+//  D98212.1  2000-10-06  V5R1  Teraspace stage 2
+//  RFW629185 2014-10-07  V7R3  PWFS0200, QPWFS_COPY, Qpwfs_Exit_Parms200_t
 //----------------------------------------------------------
 
 

@@ -28,10 +28,10 @@
 // Function Prototype List: None.
 // 
 // Change Activity:
-//  D98603, V5R2, 2001-04-03: New Include
-//  D98359, V5R3, 2002-07-19: Add new fields
-//  P9A10011, V5R3, 2002-08-12: Add job type/subtype
-//  D93793, V5R5, 2006-06-29: Add JOBQ ASP
+//  D98603    2001-04-03  V5R2  New Include
+//  D98359    2002-07-19  V5R3  Add new fields
+//  P9A10011  2002-08-12  V5R3  Add job type/subtype
+//  D93793    2006-06-29  V5R5  Add JOBQ ASP
 //----------------------------------------------------------
 
 

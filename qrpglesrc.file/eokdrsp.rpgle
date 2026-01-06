@@ -29,12 +29,13 @@
 // Function Prototype List: None.
 // 
 // Change Activity:
-//  D2862000, V3R1, 1994-04-15: New Include
-//  D95344.2, V4R2, 1997-03-31: Add new SDD field for Allow Synchronization in the reserved 1-char  
-//    area before the User Def. Field information in the EOKP0100 structure.
-//    This is XPF OK support for NTSI D95046.
-//  D94424.1, V4R3, 1997-08-04: Add new SDD field for DLO Owner in the SUPP0100 format after the 
-//    Number UserDef Fields field.
+//  D2862000  1994-04-15  V3R1  New Include
+//  D95344.2  1997-03-31  V4R2  Add new SDD field for Allow Synchronization in the reserved 1-char  
+//                              area before the User Def. Field information in the EOKP0100 
+//                              structure.
+//                              This is XPF OK support for NTSI D95046.
+//  D94424.1  1997-08-04  V4R3  Add new SDD field for DLO Owner in the SUPP0100 format after the 
+//                              Number UserDef Fields field.
 //----------------------------------------------------------
 
 

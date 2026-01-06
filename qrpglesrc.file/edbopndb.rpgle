@@ -27,9 +27,9 @@
 // Function Prototype List: None.
 // 
 // Change Activity:
-//  D94085.6, V5R3, 2003-09-31: New Include
-//  P9A47712, V5R3, 2003-11-21: Add current user name
-//  D93549.13, V5R5, 2007-02-20: QDBE_Query_Open
+//  D94085.6  2003-09-31  V5R3  New Include
+//  P9A47712  2003-11-21  V5R3  Add current user name
+//  D93549.13 2007-02-20  V5R5  QDBE_Query_Open
 //----------------------------------------------------------
 
 

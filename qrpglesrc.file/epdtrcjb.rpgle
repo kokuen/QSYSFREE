@@ -34,8 +34,8 @@
 // Function Prototype List: None.
 // 
 // Change Activity:
-//  P3954178, V3R1, 1994-05-13: New Include
-//  P3981592, V3R6, 1995-02-13: Changes for DCR 91834
+//  P3954178  1994-05-13  V3R1  New Include
+//  P3981592  1995-02-13  V3R6  Changes for DCR 91834
 //----------------------------------------------------------
 
 

@@ -43,8 +43,8 @@
 // Function Prototype List: None.
 // 
 // Change Activity:
-//  P3961391, V3R1, 1994-07-25: New Include
-//  P3981961, V3R6, 1995-02-14: Fix prolog list
+//  P3961391  1994-07-25  V3R1  New Include
+//  P3981961  1995-02-14  V3R6  Fix prolog list
 //----------------------------------------------------------
 
 

@@ -34,13 +34,13 @@
 // Function Prototype List: None.
 // 
 // Change Activity:
-//  D98184, V5R1, 1999-12-02: New Include
-//  P9953931, V5R2, 2001-09-26: Changes w/D98880
-//  D99198, V5R3, 2002-08-30: Changes w/D99198
-//  P9A95904, V5R3, 2005-06-03: Add support for mail sender in extension area
-//  P9B07263, V5R4, 2005-08-09: Add field to specify offset to message text. SMTP only.
-//  P9C19044, V5R4, 2008-01-21: Add flag for email delimiter
-//  PFW472286, V5R4, 2009-06-12: Add flags for encryption of stream files and spooled files
+//  D98184    1999-12-02  V5R1  New Include
+//  P9953931  2001-09-26  V5R2  Changes w/D98880
+//  D99198    2002-08-30  V5R3  Changes w/D99198
+//  P9A95904  2005-06-03  V5R3  Add support for mail sender in extension area
+//  P9B07263  2005-08-09  V5R4  Add field to specify offset to message text. SMTP only.
+//  P9C19044  2008-01-21  V5R4  Add flag for email delimiter
+//  PFW472286 2009-06-12  V5R4  Add flags for encryption of stream files and spooled files
 //----------------------------------------------------------
 
 

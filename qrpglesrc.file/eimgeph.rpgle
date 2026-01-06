@@ -25,9 +25,9 @@
 // Function Prototype List: None.
 // 
 // Change Activity:
-//  D97941, V5R1, 1999-08-26: Created
-//  D98795, V5R2, 2004-01-16: Writer MsgQ Support
-//  D97260, V5R2, 2004-01-16: Decoupled splf from job support
+//  D97941  1999-08-26  V5R1  Created
+//  D98795  2004-01-16  V5R2  Writer MsgQ Support
+//  D97260  2004-01-16  V5R2  Decoupled splf from job support
 //----------------------------------------------------------
 
 

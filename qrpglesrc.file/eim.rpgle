@@ -24,17 +24,17 @@
 // Function Prototype List: None.
 // 
 // Change Activity:
-//  D9860600, V5R2, 2002-02-02: New Include
-//  P9A04903, V5R2, 2002-03-30: Fix AIX registry type
-//  D9121900, V5R3, 2002-12-15: Add policy support + Add message catalog Id numbers
-//  D9121908, V5R3, 2002-12-15: Add new config. + Add assoc type to EimIdentifier struct
-//  D9121910, V5R3, 2003-02-16: Reorganize structures
-//  P9A26515, V5R3, 2003-03-30: Add linux registry type
-//  P9A28411, V5R3, 2003-05-18: Add Tivoli Access Manager type + duplicate of Policy Director
-//  P9A28415, V5R3, 2003-07-20: Add Domino reg types
-//  P9A35259, V5R3, 2003-08-03: Add new Windows reg type defines
-//  P9A36692, V5R3, 2003-08-31: Add eimGetVersion
-//  P9A78104, V5R3, 2004-10-01: Add credential and registry group support
+//  D9860600  2002-02-02  V5R2  New Include
+//  P9A04903  2002-03-30  V5R2  Fix AIX registry type
+//  D9121900  2002-12-15  V5R3  Add policy support + Add message catalog Id numbers
+//  D9121908  2002-12-15  V5R3  Add new config. + Add assoc type to EimIdentifier struct
+//  D9121910  2003-02-16  V5R3  Reorganize structures
+//  P9A26515  2003-03-30  V5R3  Add linux registry type
+//  P9A28411  2003-05-18  V5R3  Add Tivoli Access Manager type + duplicate of Policy Director
+//  P9A28415  2003-07-20  V5R3  Add Domino reg types
+//  P9A35259  2003-08-03  V5R3  Add new Windows reg type defines
+//  P9A36692  2003-08-31  V5R3  Add eimGetVersion
+//  P9A78104  2004-10-01  V5R3  Add credential and registry group support
 //----------------------------------------------------------
 
 

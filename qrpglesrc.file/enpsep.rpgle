@@ -33,8 +33,8 @@
 // Function Prototype List: None.
 // 
 // Change Activity:
-//  P3981775, V3R6, 1995-02-08: New Include
-//  D97260, V5R2, 2001-07-23: Decouple spooled files
+//  P3981775  1995-02-08  V3R6  New Include
+//  D97260    2001-07-23  V5R2  Decouple spooled files
 //----------------------------------------------------------
 
 

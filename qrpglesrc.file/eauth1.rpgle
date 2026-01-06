@@ -26,7 +26,7 @@
 // Function Prototype List: None.
 // 
 // Change Activity:
-//  PPD0021TL, V7R6, 2023-08-06: New Include
+//  PPD0021TL 2023-08-06  V7R6  New Include
 //----------------------------------------------------------
 
 

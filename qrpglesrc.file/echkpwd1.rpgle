@@ -26,7 +26,7 @@
 // Function Prototype List: None.
 // 
 // Change Activity:
-//  D99718, V5R4, 2003-08-25: New Include
+//  D99718  2003-08-25  V5R4  New Include
 //----------------------------------------------------------
 
 

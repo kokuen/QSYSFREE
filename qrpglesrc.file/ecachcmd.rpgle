@@ -27,9 +27,9 @@
 // Function Prototype List: None.
 // 
 // Change Activity:
-//  D95252, V4R5, 1999-03-03: New Include
-//  D98212.1, V5R1, 1999-11-07: Teraspace stage 2
-//  D99697, V5R4, 2004-10-31: Proxy Command Support
+//  D95252    1999-03-03  V4R5  New Include
+//  D98212.1  1999-11-07  V5R1  Teraspace stage 2
+//  D99697    2004-10-31  V5R4  Proxy Command Support
 //----------------------------------------------------------
 
 
