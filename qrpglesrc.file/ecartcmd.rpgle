@@ -57,9 +57,9 @@ dcl-ds Qca_Rtv_RTVC0100_t qualified;
   exitPointFormat                   char(8);
   commandName                       char(10);
   libraryName                       char(10);
-  *n                                char(2)   inz(x'00'); // Reserved by the system
+  *n                                char(2)   inz(*allx'00'); // Reserved by the system
   calledAfterCommand                ind;
-  *n                                char(1)   inz(x'00'); // Reserved by the system
+  *n                                char(1)   inz(*allx'00'); // Reserved by the system
   offsetToOriginalCommandString     int(10);
   originalCommandStringLength       int(10);
   offsetToReplacementCommandString  int(10);

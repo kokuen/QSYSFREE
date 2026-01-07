@@ -67,7 +67,7 @@ dcl-ds Qwt_Job_Start_End_Notify_t qualified;
   jobEndSeverity          int(10);
   processingUnitTime      int(20);
   jobQueueASPDevice       char(10);
-  *n                      char(22)    inz(x'00'); // Reserved by the system
+  *n                      char(22)    inz(*allx'00'); // Reserved by the system
 end-ds Qwt_Job_Start_End_Notify_t;
 
 // Type Definition for the Job Queue Notification Messages
@@ -78,10 +78,10 @@ dcl-ds Qwt_Job_Queue_Notify_t qualified dim;
   qualifiedJob            char(26);
   qualifiedJobQueue       char(20);
   jobSystemEntryTimestamp char(8);
-  *n                      char(16)  inz(x'00'); // Reserved by the system
+  *n                      char(16)  inz(*allx'00'); // Reserved by the system
   jobType                 char(1);
   jobSubtype              char(1);
-  *n                      char(12)  inz(x'00'); // Reserved by the system
+  *n                      char(12)  inz(*allx'00'); // Reserved by the system
   jobQueueASPDevice       char(10);
-  *n                      char(22)  inz(x'00'); // Reserved by the system
+  *n                      char(22)  inz(*allx'00'); // Reserved by the system
 end-ds Qwt_Job_Queue_Notify_t;

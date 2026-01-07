@@ -55,7 +55,7 @@ dcl-ds QDBE_Opn_DB_File_Array_Entry_t qualified;
    fileName           char(10);
    libraryName        char(10);
    memberName         char(10);
-   *n                 char(2)   inz(x'00'); // Reserved by the system
+   *n                 char(2)   inz(*allx'00'); // Reserved by the system
    fileType           int(10);
    underlyingPhysical int(10);
    openInputOption    ind;

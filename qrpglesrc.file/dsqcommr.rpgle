@@ -50,19 +50,19 @@
 dcl-ds Dsq_Query_Communication_Interface qualified;
   queryExecutionStatus      int(10);
   SAAQueryIdentifier        int(10);
-  *n                        char(44)  inz(x'00'); // Reserved by the system
+  *n                        char(44)  inz(*allx'00'); // Reserved by the system
   completionMessageId       char(8);
   queryMessageId            char(8);
   failAtStartParameterError char(8);
   commandIsCanceled         ind;
-  *n                        char(17)  inz(x'00'); // Reserved by the system
+  *n                        char(17)  inz(*allx'00'); // Reserved by the system
   queryDerivedFromQRYDFN    ind;
   formDerivedFromQRYDFN     ind;
   environmentDeletion       char(4);
-  *n                        char(256) inz(x'00'); // Reserved by the system
-  *n                        char(256) inz(x'00'); // Reserved by the system
-  *n                        char(256) inz(x'00'); // Reserved by the system
-  *n                        char(156) inz(x'00'); // Reserved by the system
+  *n                        char(256) inz(*allx'00'); // Reserved by the system
+  *n                        char(256) inz(*allx'00'); // Reserved by the system
+  *n                        char(256) inz(*allx'00'); // Reserved by the system
+  *n                        char(156) inz(*allx'00'); // Reserved by the system
 end-ds Dsq_Query_Communication_Interface;
 
 

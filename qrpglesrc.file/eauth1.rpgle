@@ -61,7 +61,7 @@ dcl-ds QsyAuthenticationCallerIn qualified;
   remoteIPAddress       char(46);
   localIPAddress        char(46);
   verificationId        char(30);
-  *n                    char(2)   inz(x'00'); // Reserved by the system
+  *n                    char(2)   inz(*allx'00'); // Reserved by the system
   authenticationType    int(10); 
   // callingInfo        char(5);
   callingInterface      int(10);
@@ -73,7 +73,7 @@ dcl-ds Qsy_Authentication_Info_t qualified;
   exitPointName           char(20);
   exitPointFormat         char(8);
   userProfile             char(10);
-  *n                      char(2)   inz(x'00'); // Reserved by the system
+  *n                      char(2)   inz(*allx'00'); // Reserved by the system
   offseToAdditionalFactor int(10);
   additionalFactorLength  int(10);
   additionalFactorCCSID   int(10);
@@ -85,7 +85,7 @@ dcl-ds Qsy_Authentication_Info_t qualified;
   remoteIPAddress         char(46);
   localIPAddress          char(46);
   verificationId          char(30);
-  *n                      char(2)   inz(x'00'); // Reserved by the system
+  *n                      char(2)   inz(*allx'00'); // Reserved by the system
   authenticationIndicator int(10);
   // callingInfo          char(5);
   callingInterface        int(10);

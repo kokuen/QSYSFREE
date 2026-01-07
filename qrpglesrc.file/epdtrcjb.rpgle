@@ -104,7 +104,7 @@ dcl-ds Qsc_MessageHandler_Trace_Data_t qualified;
   dcl-s ILEModuleName               char(10);
   dcl-s ILEModuleLibraryName        char(10);
   dcl-s messageQueueType            char(1);
-  *n                                char(2)     inz(x'00'); // Reserved by the system
+  *n                                char(2)     inz(*allx'00'); // Reserved by the system
   dcl-s offsetToLongProcedureName   int(10);
   dcl-s longProcedureNameLength     int(10);
   // dcl-s longProcedureName        char(1);  // Varying length
@@ -149,7 +149,7 @@ dcl-ds Qsc_Data_Trace_Data_t qualified;
   ILEModuleName                       char(10);
   ILEModuleLibraryName                char(10);
   messageQueueType                    char(1);
-  *n                                  char(2)     inz(x'00'); // Reserved by the system
+  *n                                  char(2)     inz(*allx'00'); // Reserved by the system
   offsetToLongProcedureName           int(10);
   longProcedureNameLength             int(10);
   longProcedureName                   char(1);
@@ -219,7 +219,7 @@ dcl-ds Qsc_Trace_Record_Format_t qualified;
   messageILEModuleName                char(10);
   messageILEModuleLibraryName         char(10);
   messageQueueType                    char(1);
-  *n                                  char(2)     inz(x'00'); // Reserved by the system
+  *n                                  char(2)     inz(*allx'00'); // Reserved by the system
   offsetToMessageLongProcedureName    int(10);
   messageLongProcedureNameLength      int(10);
   messageLongProcedureName            char(1);

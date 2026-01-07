@@ -66,7 +66,7 @@ dcl-ds Qok_Chkp_CHKP0100_t qualified;
   oldUserToForward          char(16);
   indirectUser              ind;
   printPersonMail           ind;
-  *n                        char(3)     inz(x'00'); // Reserved by the system
+  *n                        char(3)     inz(*allx'00'); // Reserved by the system
   description               char(50);
   characterSet01            int(10);
   codePage01                int(10);
@@ -82,27 +82,27 @@ dcl-ds Qok_Chkp_CHKP0100_t qualified;
   preferredName             char(20);
   characterSet05            int(10);
   codePage05                int(10);
-  *n                        char(2)     inz(x'00'); // Reserved by the system
+  *n                        char(2)     inz(*allx'00'); // Reserved by the system
   fullName                  char(50);
   characterSet06            int(10);
   codePage06                int(10);
-  *n                        char(2)     inz(x'00'); // Reserved by the system
+  *n                        char(2)     inz(*allx'00'); // Reserved by the system
   department                char(10);
   characterSet07            int(10);
   codePage07                int(10);
-  *n                        char(2)     inz(x'00'); // Reserved by the system
+  *n                        char(2)     inz(*allx'00'); // Reserved by the system
   jobTitle                  char(50);
   characterSet08            int(10);
   codePage08                int(10);
-  *n                        char(2)     inz(x'00'); // Reserved by the system
+  *n                        char(2)     inz(*allx'00'); // Reserved by the system
   company                   char(50);
   characterSet09            int(10);
   codePage09                int(10);
-  *n                        char(2)     inz(x'00'); // Reserved by the system
+  *n                        char(2)     inz(*allx'00'); // Reserved by the system
   telephoneNumber01         char(26);
   characterSet10            int(10);
   codePage10                int(10);
-  *n                        char(2)     inz(x'00'); // Reserved by the system
+  *n                        char(2)     inz(*allx'00'); // Reserved by the system
   telephoneNumber02         char(26);
   characterSet11            int(10);
   codePage11                int(10);
@@ -127,7 +127,7 @@ dcl-ds Qok_Chkp_CHKP0100_t qualified;
   mailingAddress04          char(40);
   characterSet18            int(10);
   codePage18                int(10);
-  *n                        char(2)     inz(x'00'); // Reserved by the system
+  *n                        char(2)     inz(*allx'00'); // Reserved by the system
   text                      char(50);
   characterSet19            int(10);
   codePage19                int(10);
@@ -153,7 +153,7 @@ dcl-ds Qok_Chkp_CHKP0100_t qualified;
   X400DomainAttributeValue3 char(128);
   X400DomainAttributeType4  char(8);
   X400DomainAttributeValue4 char(128);
-  *n                        char(3)     inz(x'00'); // Reserved by the system
+  *n                        char(3)     inz(*allx'00'); // Reserved by the system
   faxTelephoneNumber        char(32);
   characterSet20            int(10);
   codePage20                int(10);
@@ -169,20 +169,20 @@ end-ds Qok_Chkp_CHKP0100_t;
 
 // Stucture for Directory Entry Format 0200
 dcl-ds Qok_Chkp_CHKP0200_t qualified;
-  *n                    char(2)   inz(x'00'); // Reserved by the system
+  *n                    char(2)   inz(*allx'00'); // Reserved by the system
   department            char(10)
   characterSet01        int(10);
   codePage01            int(10);
-  *n                    char(2)   inz(x'00'); // Reserved by the system
+  *n                    char(2)   inz(*allx'00'); // Reserved by the system
   Title                 char(50);
   characterSet02        int(10);
   codePage02            int(10);
-  *n                    char(2)   inz(x'00'); // Reserved by the system
+  *n                    char(2)   inz(*allx'00'); // Reserved by the system
   reportsToDepartment   char(10);
   characterSet03        int(10);
   codePage03            int(10);
   managerUserIDAddress  char(16);
-  *n                    char(2)   inz(x'00'); // Reserved by the system
+  *n                    char(2)   inz(*allx'00'); // Reserved by the system
   oldDepartment         char(10);
   characterSet04        int(10);
   codePage04            int(10);
@@ -193,27 +193,27 @@ dcl-ds Qok_Chkp_CHKP0300_t qualified;
   location        char(40)
   characterSet01  int(10);
   codePage01      int(10);
-  *n              char(2)   inz(x'00'); // Reserved by the system
+  *n              char(2)   inz(*allx'00'); // Reserved by the system
   locationLine1   char(30);
   characterSet02  int(10);
   codePage02      int(10);
-  *n              char(2)   inz(x'00'); // Reserved by the system
+  *n              char(2)   inz(*allx'00'); // Reserved by the system
   locationLine2   char(30);
   characterSet03  int(10);
   codePage03      int(10);
-  *n              char(2)   inz(x'00'); // Reserved by the system
+  *n              char(2)   inz(*allx'00'); // Reserved by the system
   locationLine3   char(30);
   characterSet04  int(10);
   codePage04      int(10);
-  *n              char(2)   inz(x'00'); // Reserved by the system
+  *n              char(2)   inz(*allx'00'); // Reserved by the system
   locationLine4   char(30);
   characterSet05  int(10);
   codePage05      int(10);
-  *n              char(2)   inz(x'00'); // Reserved by the system
+  *n              char(2)   inz(*allx'00'); // Reserved by the system
   locationLine5   char(30);
   characterSet06  int(10);
   codePage06      int(10);
-  *n              char(2)   inz(x'00'); // Reserved by the system
+  *n              char(2)   inz(*allx'00'); // Reserved by the system
   locationLine6   char(30);
   characterSet07  int(10);
   codePage07      int(10);

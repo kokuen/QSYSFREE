@@ -58,9 +58,9 @@ dcl-ds Qmh_Receiving_Program_Info_t qualified;
   moduleName        char(10);
   procedureName     char(256);
   programType       char(1);
-  *n                char(2)     inz(x'00'); // Reserved by the system
+  *n                char(2)     inz(*allx'00'); // Reserved by the system
   OffsetToProcedure int(10);
   ProcedureLength   int(10);
-  // *n             char(*);    inz(x'00'); // Reserved by the system
+  // *n             char(*);    inz(*allx'00'); // Reserved by the system
   // procedures     char(*);
 end-ds Qmh_Receiving_Program_Info_t;

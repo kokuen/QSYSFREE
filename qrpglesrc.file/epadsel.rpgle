@@ -60,7 +60,7 @@ dcl-ds PDSC0100 qualified;
   requestedSpecificName int(10);
   requestedDeviceName   char(10);
   returnedDataFormat    char(8);
-  *n                    char(2)   inz(x'00');
+  *n                    char(2)   inz(*allx'00');
 end-ds PDSC0100;
 
 // dcl-s outputs char(22);

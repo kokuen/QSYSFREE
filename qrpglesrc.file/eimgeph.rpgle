@@ -71,7 +71,7 @@ dcl-ds Qimg_XFRM0100 qualified;
   rightUnprintableArea      int(10);
   topUnprintableArea        int(10);
   bottomUnprintableArea     int(10);
-  *n                        char(12)      inz(x'00'); // Reserved by the system
+  *n                        char(12)      inz(*allx'00'); // Reserved by the system
   spoolJobName              char(10);
   spoolUser                 char(10);
   spoolJobNumber            char(6);
@@ -79,14 +79,14 @@ dcl-ds Qimg_XFRM0100 qualified;
   spoolNumber               int(10);
   systemName                char(8);
   creationDate              char(7);
-  *n                        char(1)       inz(x'00'); // Reserved by the system
+  *n                        char(1)       inz(*allx'00'); // Reserved by the system
   creationTime char(6);
-  *n                        char(2)       inz(x'00'); // Reserved by the system
+  *n                        char(2)       inz(*allx'00'); // Reserved by the system
   writerMessageQueue        char(10);
   writerMessageQueueLibrary char(10);
   internalSpoolID           char(16);
   internalJobID             char(16);
-  *n                        char(24)      inz(x'00'); // Reserved by the system
+  *n                        char(24)      inz(*allx'00'); // Reserved by the system
 end-ds Qimg_XFRM0100;
 
 dcl-ds Qimg_IPRM0100 qualified;

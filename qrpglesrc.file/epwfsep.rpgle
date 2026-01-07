@@ -76,12 +76,12 @@ dcl-ds Qpwfs_Exit_Parms200_t qualified;
   readAndWriteAccess    ind;
   deleteAllowed         ind;
   creationObjectType    char(10);
-  *n                    char(6)   inz(x'00'); // Reserved by the system
+  *n                    char(6)   inz(*allx'00'); // Reserved by the system
   offsetToSource        uns(10);
   sourceFileNameLength  uns(10);
   offsetToTarget        uns(10);
   targetFileNameLength  uns(10);
-  *n                    char(64)  inz(x'00'); // Reserved by the system
+  *n                    char(64)  inz(*allx'00'); // Reserved by the system
   // sourceFileName     char(1);  // Varying length
   // targetFileName     char(1);  // Varying length
 end-ds Qpwfs_Exit_Parms200_t;

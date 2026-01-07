@@ -58,7 +58,7 @@ dcl-ds Qca_Chg_CHGC0100_t qualified;
   libraryName           char(10);
   changeAllowed         ind;
   promptRequested       ind;
-  *n                    char(2) inz(x'00'); // Reserved by the system
+  *n                    char(2) inz(*allx'00'); // Reserved by the system
   offsetToCommandString int(10);
   commandStringLength   int(10);
   offsetToProxyChain    int(10);

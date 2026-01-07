@@ -150,7 +150,7 @@ dcl-ds Qog_Doci_DOCI0200_t qualified;
   adjustmentOption      char(1);
   multipleLineReport    ind;
   collectFootnotes      ind;
-  *n                    char(258)   inz(x'00'); // Reserved by the system
+  *n                    char(258)   inz(*allx'00'); // Reserved by the system
 end-ds Qog_Doci_DOCI0200_t;
 
 // Spell function request format.
@@ -158,7 +158,7 @@ dcl-ds Qog_Doci_DOCI0300_t qualified;
   checkType     ind;
   beginningPage char(7);
   endingPage    char(7);
-  *n            char(470) inz(x'00'); // Reserved by the system
+  *n            char(470) inz(*allx'00'); // Reserved by the system
 end-ds Qog_Doci_DOCI0300_t;
 
 // Mail function request format.
@@ -167,13 +167,13 @@ dcl-ds Qog_Doci_DOCI0400_t qualified;
   mailReferenceFolder char(63);
   attachMailReference ind;
   sameNote            ind;
-  *n                  char(408) inz(x'00'); // Reserved by the system
+  *n                  char(408) inz(*allx'00'); // Reserved by the system
 end-ds Qog_Doci_DOCI0400_t;
 
 // Edit function request format.
 dcl-ds Qog_Doci_DOCI0500_t qualified;
   showExitDisplay ind;
-  *n              char(484) inz(x'00'); // Reserved by the system
+  *n              char(484) inz(*allx'00'); // Reserved by the system
 end-ds Qog_Doci_DOCI0500_t;
 
 // Create function request format.
@@ -181,7 +181,7 @@ dcl-ds Qog_Doci_DOCI0600_t qualified;
   showExitDisplay       ind;
   showDocDetailsDisplay ind;
   editDocument          ind;
-  *n                    char(482) inz(x'00'); // Reserved by the system
+  *n                    char(482) inz(*allx'00'); // Reserved by the system
 end-ds Qog_Doci_DOCI0600_t;
 
 // Fill form function request format.
@@ -199,7 +199,7 @@ dcl-ds Qog_Doci_DOCI0700_t qualified;
   fileMember        char(10);
   replaceOrAdd      ind;
   outputDataOnExit  ind;
-  *n char(299) inz(x'00'); // Reserved by the system
+  *n char(299) inz(*allx'00'); // Reserved by the system
 end-ds Qog_Doci_DOCI0700_t;
 
 // Fill form function request format.
@@ -207,7 +207,7 @@ dcl-ds Qog_Doci_DOCI0800_t qualified;
   userID          char(8);
   userAddress     char(8);
   distributionID  char(22);
-  *n              char(447) inz(x'00'); // Reserved by the system
+  *n              char(447) inz(*allx'00'); // Reserved by the system
 end-ds Qog_Doci_DOCI0800_t;
 
 // Send and Addressing function request format.
@@ -243,7 +243,7 @@ dcl-ds Qog_Doci_DOCI0900_t qualified dim;
   memoSlip                      char(18);
   actionItemText                char(5);
   usersMemoSlipText             char(202);
-  *n                            char(13)    inz(x'00'); // Reserved by the system
+  *n                            char(13)    inz(*allx'00'); // Reserved by the system
 end-ds Qog_Doci_DOCI0900_t;
 
 // Varying length

@@ -53,7 +53,7 @@ dcl-ds Qsy_Chk_Password_Info_t qualified;
   exitPointFormat     char(8);
   passwordLevel       int(10);
   userProfile         char(10);
-  *n                  char(2)   inz(x'00'); // Reserved by the system
+  *n                  char(2)   inz(*allx'00'); // Reserved by the system
   offsetToOldPassword int(10);
   oldPasswordLength   int(10);
   oldPasswordCCSID    int(10);

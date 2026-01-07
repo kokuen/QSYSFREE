@@ -69,7 +69,7 @@ dcl-ds Qpq_Email_Exit_I_t qualified;
   mailTag                 char(250);
   filePathAndName         char(340);
   mailServerType          char(1);
-  *n                      char(1)     inz(x'00');
+  *n                      char(1)     inz(*allx'00');
   pathNameCCSID           int(10);
   mailSender              char(10);
   userData                char(10);
@@ -86,7 +86,7 @@ end-ds Qpq_Email_Exit_I_t;
 dcl-ds Qpq_Email_Exit_O_t qualified;
   PDFFileDisposition          char(1);
   callExitProgramAgain        ind;
-  *n                          char(2)     inz(x'00');
+  *n                          char(2)     inz(*allx'00');
   messageTextLength           int(10);
   mailAddressDataLength       int(10);
   messageTextData             char(255);
@@ -98,7 +98,7 @@ dcl-ds Qpq_Email_Exit_O_t qualified;
   PDFErrorDisposition         char(1);
   AFPSpooledFileDisposition   char(1);
   messageTextOffset           int(10);
-  *n                          char(3)     inz(x'00');
+  *n                          char(3)     inz(*allx'00');
   // EPQEA                    char(1);  // Varying length
 end-ds Qpq_Email_Exit_O_t;
 
@@ -115,7 +115,7 @@ dcl-ds Qpq_Stream_File_t qualified;
   offsetToPathName      int(10);
   pathNameLength        int(10);
   useSpecifiedDirectory ind;
-  *n                    char(3)   inz(x'00');
+  *n                    char(3)   inz(*allx'00');
   // EPQPN              char(1);  // Varying length
 end-ds Qpq_Stream_File_t;
 
