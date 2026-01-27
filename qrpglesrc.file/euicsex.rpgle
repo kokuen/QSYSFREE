@@ -55,7 +55,7 @@ dcl-ds Qui_CSX_t qualified;
   panelName         char(10);
   element           char(1);
   *n                char(1)   inz(*allx('00'));
-  varName           char(10);
+  variableName      char(10);
   listName          char(10);
   listEntry         char(4);
 end-ds Qui_CSX_t;
