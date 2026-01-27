@@ -9,18 +9,19 @@
 //  Schedule Contract with IBM Corp.
 //  Licensed Materials-Property of IBM
 //
-// Header File Name: H/EUIAFEX
-// Descriptive Name: Application Formatted Data Exit Program
+// Header File Name: H/EUIALCL
+// Descriptive Name: Action List Option/Pull-Down Field Choice Exit Program
 // 
 // Description:
-//  Include header file for the UIM call parms for an EXIT program for application formatted data.
+//  Include header file for the UIM call parms for a CALL program for a action list option or a
+//  pull-down field choice
 // 
 // Header Files Included: None.
 // 
 // Macros List: None.
 // 
 // Structure List:
-//  Qui_AFX_t
+//  Qui_ALC_t
 // 
 // Function Prototype List: None.
 // 
@@ -34,10 +35,10 @@
 //--------------------------------------
 
 
-/if defined(euiafex)
+/if defined(euialcl)
   /eof 
 /else
-  /define euiafex
+  /define euialcl
 /endif
 
 
@@ -46,13 +47,16 @@
 //--------------------------------------
 
 
-// Parm structure for a UIM EXIT program for a application formatted data processing
-dcl-ds Qui_AFX_t qualified;
+// Parm structure for a UIM CALL program for a action list option or pull-down field choice
+dcl-ds Qui_ALC_t qualified;
   structureLevel    int(10);
   *n                char(8)   inz(*allx('00'));
   callType          int(10);
   applicationHandle char(8);
   panelName         char(10);
-  bidi              char(1);
-  codePage          int(10);
-end-ds Qui_AFX_t;
+  listName          char(10);
+  listEntry         char(4);
+  listOption        int(10);
+  functionQualifier int(10);
+  fieldName         char(10);
+end-ds Qui_ALC_t;
