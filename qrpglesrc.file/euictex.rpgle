@@ -2,30 +2,31 @@
 //----------------------------------------------------------
 // Product(s):
 //  5763-SS1
+//  5722-SS1
 //
 // Copyright:
-//  Copyright IBM Corp. 1994, 1994 - All rights reserved.
+//  Copyright IBM Corp. 1994, 2001 - All rights reserved.
 //  US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP 
 //  Schedule Contract with IBM Corp.
 //  Licensed Materials-Property of IBM
 //
-// Header File Name: H/EUICSEX
-// Descriptive Name: Cursor-Sensitive Prompt Exit Program
+// Header File Name: H/EUICTEX
+// Descriptive Name: Conditioning Tag Exit Program
 // 
 // Description:
-//  Include header file for the UIM call parms for an EXIT program for cursor-sensitive prompting.
+//  Include header file for the UIM call parms for an EXIT program for a condition tag.
 // 
 // Header Files Included: None.
 // 
 // Macros List: None.
 // 
 // Structure List:
-//  Qui_CSX_t
+//  Qui_CTX_t
 // 
 // Function Prototype List: None.
 // 
 // Change Activity:
-//  D2862000  1994-04-12  V3R1  New Include
+//  P9942426	2001-02-02	V5R2	New Include
 //----------------------------------------------------------
 
 
@@ -34,10 +35,10 @@
 //--------------------------------------
 
 
-/if defined(euicsex)
+/if defined(euictex)
   /eof 
 /else
-  /define euicsex
+  /define euictex
 /endif
 
 
@@ -46,16 +47,17 @@
 //--------------------------------------
 
 
-// Parm structure for a UIM EXIT program for a cursor-sensitive prompting
-dcl-ds Qui_CSX_t qualified;
+// Parm structure for a UIM EXIT program for condition tag checking
+dcl-ds Qui_CTX_t qualified;
   structureLevel    int(10);
   *n                char(8)   inz(*allx('00'));
   callType          int(10);
   applicationHandle char(8);
+  objectName        char(10);
+  libraryName       char(10);
+  objectType        char(10);
+  moduleName        char(32);
   panelName         char(10);
-  element           char(1);
-  *n                char(1)   inz(*allx('00'));
-  varName           char(10);
-  listName          char(10);
-  listEntry         char(4);
-end-ds Qui_CSX_t;
+  conditionName     char(10);
+  returnCode        char(1);
+end-ds Qui_CTX_t;
