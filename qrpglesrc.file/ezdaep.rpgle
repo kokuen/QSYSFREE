@@ -144,10 +144,10 @@ dcl-ds Qzda_SQL_Format_t qualified;
   openAttributes        char(2);
   packageName           char(10);
   packageLibraryName    char(10);
-  drdaConnectIndicator  int(10);
+  DRDAConnectIndicator  int(3);
   commitIndicator       char(1);
   SQLStatementText      char(512);
-  extendedCursorName    char(270);
+  extendedCursorName    char(258);
 end-ds Qzda_SQL_Format_t;
 
 // Typedef for the SQL exit point format #2
@@ -162,7 +162,7 @@ dcl-ds Qzda_SQL_Format2_t qualified;
   openAttributes              char(2);
   packageName                 char(10);
   packageLibraryName          char(10);
-  drdaConnectIndicator        int(10);
+  DRDAConnectIndicator        int(3);
   commitIndicator             char(1);
   defaultSQLCollection        char(10);
   *n                          char(3)   inz(*allx('00'));
