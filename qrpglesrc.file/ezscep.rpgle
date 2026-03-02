@@ -64,7 +64,7 @@ dcl-ds Qzsc_Lic_Mgmt_Format qualified;
   feature             char(4);
   release             char(6);
   LicenseInfoType     int(5);
-end-ds Qzsc_Lic_Mgmt_Format_t;
+end-ds Qzsc_Lic_Mgmt_Format;
 
 // Structure for System (or Client) Management exit point format
 dcl-ds Qzsc_Sys_Mgmt_Format qualified;
@@ -76,7 +76,7 @@ dcl-ds Qzsc_Sys_Mgmt_Format qualified;
   communityName       char(255);
   nodeType            char(1);
   nodeName            char(255);
-end-ds Qzsc_Sys_Mgmt_Format_t;
+end-ds Qzsc_Sys_Mgmt_Format;
 
 // Structure for Retrieve Conversion Map exit point format
 dcl-ds Qzsc_Nls_Mgmt_Format qualified;
@@ -87,4 +87,4 @@ dcl-ds Qzsc_Nls_Mgmt_Format qualified;
   sourceDataCCSID     int(10);
   targetDataCCSID     int(10);
   ConversionType      int(3);
-end-ds Qzsc_Nls_Mgmt_Format_t;
+end-ds Qzsc_Nls_Mgmt_Format;
