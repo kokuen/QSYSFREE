@@ -1,0 +1,89 @@
+**free
+//----------------------------------------------------------
+// Product(s):
+//  5716-SS1
+//
+// Copyright:
+//  IBM Corp. 1994,1995 - All rights reserved.
+//  US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP 
+//  Schedule Contract with IBM Corp.
+//  Licensed Materials-Property of IBM
+//
+// Header File Name: H/ENPSEP
+// Descriptive Name: Network Print Server Exit Program structures
+// 
+// Description:   
+//  This include defines the parameter structures for the two exit points defined for the Network
+//  Print Server.
+//  1) QIBM_QNPS_ENTRY format ENTR0100
+//    Called when a conversation is allocated for the Network Print Server
+//  2) QIBM_QNPS_SPLF format SPLF0100
+//    Called for a specified spooled file
+// 
+// Header Files Included: None.
+// 
+// Macros List: None.
+// 
+// Structure List:
+//  Qnps_Server_Info_t
+//  Qnps_Exit_Pgm_RC_t
+//  Qnps_Splf_ID_t
+//  Qnps_Exit_Pgm_Data_t
+// 
+// Function Prototype List: None.
+// 
+// Change Activity:
+//  P3981775  1995-02-08  V3R6  New Include
+//  D97260    2001-07-23  V5R2  Decouple spooled files
+//----------------------------------------------------------
+
+
+//--------------------------------------
+// Include guard
+//--------------------------------------
+
+
+/if defined(enpsep)
+  /eof 
+/else
+  /define enpsep
+/endif
+
+
+//--------------------------------------
+// Data structures
+//--------------------------------------
+
+
+// Typedef for Entry exit point format and typedef for Spooled File exit point format
+dcl-ds Qnps_Server_Info_t qualified;
+  userProfile         char(10);
+  serverID            char(10);
+  userExitFormat      char(8);
+  requestedFunctionId int(10);
+end-ds Qnps_Server_Info_t;
+
+// Typedef for Spooled File return code format common to all NPS Exit Points
+dcl-ds Qnps_Exit_Pgm_RC_t qualified;
+  dcl-s value char(1);
+end-ds Qnps_Exit_Pgm_RC_t;
+
+// Typedef for Spooled File ID 
+// Specific to QIBM_QNPS_SPLF
+dcl-ds Qnps_Splf_ID_t qualified;
+  jobName       char(10);
+  userProfile   char(10);
+  jobNumber     char(6);
+  spoolName     char(10);
+  spoolNumber   int(10);
+  jobSystemName char(8);
+  creationDate  char(7);
+  creationTime  char(6);
+end-ds Qnps_Splf_ID_t;
+
+// Typedef for Exit Program Data
+// Specific to QIBM_QNPS_SPLF
+dcl-ds Qnps_Exit_Pgm_Data_t qualified;
+  dataLength  int(10);
+  data        char(1); // Intended to be a variable length array but it can not be easily defined
+end-ds Qnps_Exit_Pgm_Data_t;
