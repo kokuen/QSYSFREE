@@ -165,10 +165,10 @@ dcl-ds Qzda_SQL_Format2_t qualified;
   DRDAConnectIndicator        int(3);
   commitIndicator             char(1);
   defaultSQLCollection        char(10);
-  *n                          char(3)   inz(*allx('00'));
+  *n                          char(3)   inz(*allx('00'));  // Reserved by the system
   offsetToExtendedCursorName  int(10);
   lengthOfExtendedCursorName  int(10);
-  *n                          char(118) inz(*allx('00'));
+  *n                          char(118) inz(*allx('00'));  // Reserved by the system
   lengthOfSQLStatementText    int(10);
   // SQLStatementText         char(*);
   // extendedCursorName       char(*);
