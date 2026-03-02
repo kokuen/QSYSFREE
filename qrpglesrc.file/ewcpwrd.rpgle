@@ -50,13 +50,13 @@
 
 // Typedef for exit program structure - Qwc PDPF0100 Format
 dcl-ds Qwc_PDPF0100_Format_t qualified;
-  exitInformationLength  int(10);
-  statusFlag             int(10);
-  waitTime               int(10);
+  exitInformationLength int(10);
+  statusFlag            int(10);
+  waitTime              int(10);
 end-ds Qwc_PDPF0100_Format_t;
 
 // Typedef for exit program structure - Qwc PDPF0200 Format
 dcl-ds Qwc_PDPF0200_Format_t qualified;
-  exitInformationLength  int(10);
-  executeWaitTime        int(10);
+  exitInformationLength int(10);
+  executeWaitTime       int(10);
 end-ds Qwc_PDPF0200_Format_t;
