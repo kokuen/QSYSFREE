@@ -86,7 +86,7 @@ dcl-ds Qsy_Authentication_Info_t qualified;
   localIPAddress          char(46);
   verificationId          char(30);
   *n                      char(2)   inz(*allx'00'); // Reserved by the system
-  authenticationIndicator int(10);
+  authenticationType      int(10);
   // callingInfo          char(5);
   callingInterface        int(10);
   profileTokenType        char(1);
