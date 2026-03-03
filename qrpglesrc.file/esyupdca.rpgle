@@ -58,5 +58,5 @@ dcl-ds Qsy_Update_CA_Trust_Info_t qualified;
   *n                      char(2)     inz(*allx'00');
   offsetToCACertificateID int(10);
   CACertificateIDLength   int(10);
-  // CACertificate        char(1);    // Varying length
+  // CACertificate        char(*);    // Varying length
 end-ds Qsy_Update_CA_Trust_Info_t;

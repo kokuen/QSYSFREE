@@ -57,5 +57,5 @@ dcl-ds QQQ_QRYGV_QRYG0100_t qualified;
   userSpecifiedTemporaryStorageLimit  int(10);  // In megabytes
   offsetToSQLStatement                int(10);  // 0, if not SQL query
   SQLStatementLength                  int(10);  // 0, if not SQL query
-  // SQLStatement                     char(1);  // Varying length
+  // SQLStatement                     char(*);  // Varying length
 end-ds QQQ_QRYGV_QRYG0100_t;

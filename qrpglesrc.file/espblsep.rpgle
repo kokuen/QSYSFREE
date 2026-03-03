@@ -70,7 +70,7 @@ dcl-ds Qsp_Sep_Data_Format_t qualified;
   *n                    char(98)  inz(*allx'00'); // Reserved by the system
   userDataLength        int(10);
   userDataRecordLength  int(10);
-  // userData           char(1);  // Varying length
+  // userData           char(*);  // Varying length
 end-ds Qsp_Sep_Data_Format_t;
 
 // Typedef for Separator Information structure

@@ -102,6 +102,6 @@ dcl-ds Esp_Transform_Exit_O_t qualified;
   carriageReturnCommandsLength        int(10);
   offsetToFormFeedCommands            int(10);
   formFeedCommandsLength              int(10);
-  // carriageReturnCommands           char(1);  // Varying length
-  // formFeedCommands                 char(1);  // Varying length
+  // carriageReturnCommands           char(*);  // Varying length
+  // formFeedCommands                 char(*);  // Varying length
 end-ds Esp_Transform_Exit_O_t;

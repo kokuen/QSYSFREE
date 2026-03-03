@@ -175,7 +175,7 @@ dcl-ds Eok_User_Defined_t qualified;
   characterSet        int(10);
   codePage            int(10);
   returnedFieldLength int(10);
-  // returnedFieldValue  char(1); // Varying length
+  // returnedFieldValue  char(*); // Varying length
 end-ds Eok_User_Defined_t;
 
 // Format for the Common 0200 formats.

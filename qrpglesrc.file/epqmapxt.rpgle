@@ -99,7 +99,7 @@ dcl-ds Qpq_Email_Exit_O_t qualified;
   AFPSpooledFileDisposition   char(1);
   messageTextOffset           int(10);
   *n                          char(3)     inz(*allx'00');
-  // EPQEA                    char(1);  // Varying length
+  // EPQEA                    char(*);  // Varying length
 end-ds Qpq_Email_Exit_O_t;
 
 dcl-ds Qpq_All_Stream_Files_t qualified;
@@ -116,7 +116,7 @@ dcl-ds Qpq_Stream_File_t qualified;
   pathNameLength        int(10);
   useSpecifiedDirectory ind;
   *n                    char(3)   inz(*allx'00');
-  // EPQPN              char(1);  // Varying length
+  // EPQPN              char(*);  // Varying length
 end-ds Qpq_Stream_File_t;
 
 dcl-ds Qpq_PDF_Spooled_File_t qualified;
@@ -180,34 +180,34 @@ dcl-ds Qpq_Email_Exit_E_t qualified;
   encryptStreamFile             ind;
   encryptSpooledFile            ind;
   // Order of the following variables is discretionary
-  // EPQSS                      char(1);    // Varying length
-  // EPQRT                      char(1);    // Varying length
-  // EPQCCEA                    char(1);    // Varying length
-  // EPQBCCEA                   char(1);    // Varying length
-  // EPQAD                      char(1);    // Varying length
-  // EPQMENTS                   char(8)     dim(1);               // Varying length
+  // EPQSS                      char(*);    // Varying length
+  // EPQRT                      char(*);    // Varying length
+  // EPQCCEA                    char(*);    // Varying length
+  // EPQBCCEA                   char(*);    // Varying length
+  // EPQAD                      char(*);    // Varying length
+  // EPQMENTS                   char(8)     dim(*);               // Varying length
   // EPQTL01                    bindec(9:0) overlay(EPQMENTS: 1);
   // EPQNBRSF00                 bindec(9:0) overlay(EPQMENTS: 5);
-  // EPQPB                      char(8)     dim(1);               // Varying length
+  // EPQPB                      char(8)     dim(*);               // Varying length
   // EPQTL02                    bindec(9:0) overlay(EPQPB: 1);
   // EPQNBRSF01                 bindec(9:0) overlay(EPQPB: 5);
-  // EPQPDFFN01                 char(1);    // Varying length
-  // EPQPDFFA01                 char(1);    // Varying length
-  // EPQPDFSF00                 char(305)   dim(1);                   // Varying length
+  // EPQPDFFN01                 char(*);    // Varying length
+  // EPQPDFFA01                 char(*);    // Varying length
+  // EPQPDFSF00                 char(305)   dim(*);                   // Varying length
   // EPQOQN01                   char(10)    overlay(EPQPDFSF00: 1);
   // EPQOQLIB03                 char(10)    overlay(EPQPDFSF00: 11);
   // EPQSFILN03                 char(10)    overlay(EPQPDFSF00: 21);
   // EPQUD02                    char(10)    overlay(EPQPDFSF00: 31);
   // EPQUDD01                   char(255)   overlay(EPQPDFSF00: 41);
   // EPQMTYPE02                 char(10)    overlay(EPQPDFSF00: 296);
-  // EPQAFPSF00                 char(305)   dim(1);                   // Varying length
+  // EPQAFPSF00                 char(305)   dim(*);                   // Varying length
   // EPQOQN02                   char(10)    overlay(EPQAFPSF00: 1);
   // EPQOQLIB04                 char(10)    overlay(EPQAFPSF00: 11);
   // EPQSFILN04                 char(10)    overlay(EPQAFPSF00: 21);
   // EPQUD03                    char(10)    overlay(EPQAFPSF00: 31);
   // EPQUDD02                   char(255)   overlay(EPQAFPSF00: 41);
   // EPQMTYPE03                 char(10)    overlay(EPQAFPSF00: 296); 
-  // EPQPDFE                    char(71)    dim(1);               // Varying length
+  // EPQPDFE                    char(71)    dim(*);               // Varying length
   // EPQPDFOP00                 char(32)    overlay(EPQPDFE: 1);
   // EPQPDFUP00                 char(32)    overlay(EPQPDFE: 33);
   // EPQPDFP00                  char(1)     overlay(EPQPDFE: 65);
