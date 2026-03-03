@@ -60,6 +60,6 @@ dcl-ds Qsy_Vld_Password_Info_t qualified;
   offsetToNewPassword int(10);
   lengthOfNewPassword int(10);
   CCSIDOfNewPassword  int(10);
-  // oldPassword      char(1);  // Varying length
-  // newPassword      char(1);  // Varying length
+  // oldPassword      char(*);  // Varying length
+  // newPassword      char(*);  // Varying length
 end-ds Qsy_Vld_Password_Info_t;

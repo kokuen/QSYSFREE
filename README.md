@@ -11,9 +11,9 @@ Variables, constants and data structures names have been modified, based on IBM'
 Reserved data structures fields, used for alignement, are renammed into anonymous fields.
 The main objective here was to give them more consistent and readable names.
 
-## Indicators for char(1) fields
-Some data structure fields are originally declared as "char(1)" type but their name and/or IBM code comment clearly shows that they are used as boolean values.
-These fields have been transformed into indicators to go accordingly with it. When the usage couldn't be clearly determined, the definition as a character was kept.
+## Indicators
+Some data structure fields are originally declared as "char(1)" or "int(3)" type but their name and/or IBM code comment clearly shows that they are used as boolean values.
+These fields have been transformed into indicators to go accordingly with it. When the usage couldn't be clearly determined, the oiginal definition was kept.
 
 # What has been added?
 ## Data structures qualification

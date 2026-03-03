@@ -54,5 +54,5 @@ dcl-ds Qtoc_Server_Action qualified;
   instanceName          char(32);
   offsetToStartupValues int(10);
   lengthOfStartupValues int(10);
-  // StartupValues      char(1);  // Variable length
+  // StartupValues      char(*);  // Variable length
 end-ds Qtoc_Server_Action;

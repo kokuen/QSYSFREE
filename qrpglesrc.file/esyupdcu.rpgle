@@ -59,6 +59,6 @@ dcl-ds Qsy_Update_Cert_Usage_Info_t qualified;
   certificateStoreLength    int(10);
   offsetToCertificateID     int(10);
   CertificateIDLength       int(10);
-  // CertificateStore       char(1);    // Varying length
-  // CertificateID          char(1);    // Varying length
+  // CertificateStore       char(*);    // Varying length
+  // CertificateID          char(*);    // Varying length
 end-ds Qsy_Update_Cert_Usage_Info_t;

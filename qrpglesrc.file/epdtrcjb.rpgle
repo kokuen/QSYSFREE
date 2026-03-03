@@ -76,7 +76,7 @@ dcl-ds Qsc_Program_Flow_Trace_Data_t qualified;
   dcl-s procedureName               char(256);
   dcl-s offsetToLongProcedureName   int(10);
   dcl-s longProcedureNameLength     int(10);
-  // dcl-s longProcedureName        char(1); // Varying length
+  // dcl-s longProcedureName        char(*); // Varying length
 end-ds Qsc_Program_Flow_Trace_Data_t;
 
 // Record structure for data management trace record data
@@ -107,7 +107,7 @@ dcl-ds Qsc_MessageHandler_Trace_Data_t qualified;
   *n                                char(2)     inz(*allx'00'); // Reserved by the system
   dcl-s offsetToLongProcedureName   int(10);
   dcl-s longProcedureNameLength     int(10);
-  // dcl-s longProcedureName        char(1);  // Varying length
+  // dcl-s longProcedureName        char(*);  // Varying length
 end-ds Qsc_MessageHandler_Trace_Data_t;
 
 // Record structure for command analyzer trace record data

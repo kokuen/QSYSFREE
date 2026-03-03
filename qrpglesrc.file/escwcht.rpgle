@@ -67,7 +67,7 @@ dcl-ds Qsc_Watch_For_Msg_Trace qualified;
   *n                      char(9)   inz(*allx'00');
   offsetToComparisonData  int(10);
   comparisonDataLength    int(10);
-  // data                 char(1);  // Varying size
+  // data                 char(*);  // Varying length
 end-ds Qsc_Watch_For_Msg_Trace;
 
 // Trace Exit Program call because a LIC log id is reached
@@ -78,7 +78,7 @@ dcl-ds Qsc_Watch_For_LIClog_Trace qualified;
   LICLogIdentifier        char(8);
   offsetToComparisonData  int(10);
   comparisonDataLength    int(10);
-  // comparisonData       char(1);  // Varying size
+  // comparisonData       char(*);  // Varying length
 end-ds Qsc_Watch_For_LIClog_Trace;
 
 // Watch Exit Program called because a message id and any associated comparison data is matched.
@@ -121,10 +121,10 @@ dcl-ds Qsc_Watch_For_Msg qualified;
   targetJobName               char(10);
   targetJobUserName           char(10);
   targetJobNumber             char(6);
-  // sendingProcedureName     char(1);  // Varying size
-  // receivingProcedureName   char(1);  // Varying size
-  // messageComparisonData    char(1);  // Varying size
-  // messageReplacementData   char(1);  // Varying size
+  // sendingProcedureName     char(*);  // Varying length
+  // receivingProcedureName   char(*);  // Varying length
+  // messageComparisonData    char(*);  // Varying length
+  // messageReplacementData   char(*);  // Varying length
 end-ds Qsc_Watch_For_Msg;
 
 // Watch Exit Program called because a LIC log is reached.
@@ -154,7 +154,7 @@ dcl-ds Qsc_Watch_For_LICLOG qualified dim;
   offsetToComparisonData        int(10);
   comparisonDataLength          int(10);
   compareAgainst                char(10);
-  // comparisonData             char(1);  // Varying size
+  // comparisonData             char(*);  // Varying length
 end-ds Qsc_Watch_For_LICLOG;
 
 // Watch Exit Program called because a PAL entry is reached.
@@ -178,5 +178,5 @@ dcl-ds Qsc_Watch_For_PAL qualified;
   offsetToComparisonData  int(10);
   comparisonDataLength    int(10);
   compareAgainst          char(10);
-  // comparisonData       char(1);  // Varying size
+  // comparisonData       char(*);  // Varying length
 end-ds Qsc_Watch_For_PAL;

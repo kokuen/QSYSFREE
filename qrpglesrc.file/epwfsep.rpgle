@@ -60,7 +60,7 @@ dcl-ds Qpwfs_Exit_Parms100_t qualified;
   readAndWriteAccess  ind;
   deleteAllowed       ind;
   fileNameLength      int(10);
-  // fileName         char(1);  // Varying length
+  // fileName         char(*);  // Varying length
 end-ds Qpwfs_Exit_Parms100_t;
 
 // Type Definition for the File Server Exit Program Parameters for the PWFS0200 format
@@ -82,6 +82,6 @@ dcl-ds Qpwfs_Exit_Parms200_t qualified;
   offsetToTarget        uns(10);
   targetFileNameLength  uns(10);
   *n                    char(64)  inz(*allx'00'); // Reserved by the system
-  // sourceFileName     char(1);  // Varying length
-  // targetFileName     char(1);  // Varying length
+  // sourceFileName     char(*);  // Varying length
+  // targetFileName     char(*);  // Varying length
 end-ds Qpwfs_Exit_Parms200_t;

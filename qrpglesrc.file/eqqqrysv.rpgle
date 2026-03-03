@@ -71,11 +71,11 @@ dcl-ds QQQ_QRYSV_QRYS0100_t qualified;
   USERIDSpecialRegisterLength       int(10);  // 0, if not defined
   offsetToWRKSTNNAMESpecialRegister int(10);  // 0, if not defined
   WRKSTNNAMESpecialRegisterLength   int(10);  // 0, if not defined
-  // SQLStatement                   char(1);  // Varying length, CCSID 1200
-  // hostVariablesList              char(1);  // Varying length, CCSID 1200
-  // ACCTNGSpecialRegister          char(1);  // Varying length
-  // APPLNAMESpecialRegister        char(1);  // Varying length
-  // PROGRAMIDSpecialRegister       char(1);  // Varying length
-  // USERIDSpecialRegister          char(1);  // Varying length
-  // WRKSTNNAMESpecialRegister      char(1);  // Varying length
+  // SQLStatement                   char(*);  // Varying length, CCSID 1200
+  // hostVariablesList              char(*);  // Varying length, CCSID 1200
+  // ACCTNGSpecialRegister          char(*);  // Varying length
+  // APPLNAMESpecialRegister        char(*);  // Varying length
+  // PROGRAMIDSpecialRegister       char(*);  // Varying length
+  // USERIDSpecialRegister          char(*);  // Varying length
+  // WRKSTNNAMESpecialRegister      char(*);  // Varying length
 end-ds QQQ_QRYSV_QRYS0100_t;

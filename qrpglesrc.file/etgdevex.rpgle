@@ -97,5 +97,5 @@ dcl-ds Qtg_Connection_Description_t qualified;
   clientCertificateValidate     int(10);
   offsetToClientCertificate     int(10);
   clientCertificateLength       uns(10);
-  // certificate                char(1);  // Varying length
+  // certificate                char(*);  // Varying length
 end-ds Qtg_Connection_Description_t;
